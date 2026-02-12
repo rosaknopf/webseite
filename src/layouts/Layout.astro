@@ -1,10 +1,10 @@
 ---
-import '../styles/global.css';
-import '@fontsource/playfair-display';
-import '@fontsource/inter';
-import { siteConfig } from '../data/siteConfig';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import "../styles/global.css";
+import "@fontsource/playfair-display";
+import "@fontsource/inter";
+import { siteConfig } from "../data/siteConfig";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
 	title?: string;
@@ -12,10 +12,10 @@ interface Props {
 	image?: string;
 }
 
-const { 
-	title = siteConfig.title, 
+const {
+	title = siteConfig.title,
 	description = siteConfig.description,
-	image = '/og-image.png'
+	image = "/og-image.png",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -45,19 +45,41 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content={new URL(image, Astro.url)} />
 	</head>
-	<body class="bg-rose-50 text-brand-text min-h-screen flex flex-col font-sans">
-		{siteConfig.holidayMode.enabled && (
-			<div class="bg-rose-900 text-white text-center py-2 px-4 shadow sticky top-0 z-50">
-				<p class="text-sm font-medium">🌴 {siteConfig.holidayMode.message}</p>
-			</div>
-		)}
-		
+	<body
+		class="bg-rose-50 text-brand-text min-h-screen flex flex-col font-sans"
+	>
+		{
+			siteConfig.holidayMode.enabled && (
+				<div class="bg-rose-900 text-white text-center py-2 px-4 shadow sticky top-0 z-50">
+					<p class="text-sm font-medium">
+						🌴 {siteConfig.holidayMode.message}
+					</p>
+				</div>
+			)
+		}
+
 		<Header />
-		
+
 		<main class="flex-grow container mx-auto px-4 py-8">
 			<slot />
 		</main>
 
 		<Footer />
+
+		<script
+			is:inline
+			src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+		></script>
+		<script is:inline>
+			if (window.netlifyIdentity) {
+				window.netlifyIdentity.on("init", (user) => {
+					if (!user) {
+						window.netlifyIdentity.on("login", () => {
+							document.location.href = "/admin/";
+						});
+					}
+				});
+			}
+		</script>
 	</body>
 </html>
