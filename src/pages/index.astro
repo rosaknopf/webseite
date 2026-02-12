@@ -1,25 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { siteConfig } from "../data/siteConfig";
+import homeData from "../data/home.json";
 
-// Placeholder data for featured items (will replace with collection queries later)
-const featuredCategories = [
-	{
-		title: "Shop Unikate",
-		href: "/products",
-		image: "https://placehold.co/600x400/ffe4e6/be123c?text=Shop",
-	},
-	{
-		title: "Unsere Projekte",
-		href: "/projects",
-		image: "https://placehold.co/600x400/fecdd3/9f1239?text=Projects",
-	},
-	{
-		title: "Kurse & Workshops",
-		href: "/courses",
-		image: "https://placehold.co/600x400/fda4af/881337?text=Courses",
-	},
-];
+const { hero, features, intro } = homeData;
 ---
 
 <Layout title={siteConfig.title}>
@@ -28,9 +12,8 @@ const featuredCategories = [
 		class="relative bg-rose-100 rounded-3xl overflow-hidden mb-16 min-h-[500px] flex items-center justify-center text-center px-4"
 	>
 		<div class="absolute inset-0 z-0 opacity-40">
-			<!-- Placeholder Hero Image - Recommend using a real image from the user assets later -->
 			<img
-				src="https://placehold.co/1200x600/fff1f2/fb7185?text=Hero+Image"
+				src={hero.image}
 				alt="Hero Background"
 				class="w-full h-full object-cover"
 			/>
@@ -41,19 +24,16 @@ const featuredCategories = [
 		>
 			<h1
 				class="text-4xl md:text-6xl font-serif font-bold text-rose-950 mb-4"
-			>
-				Handgemacht & <br />
-				<span class="text-rose-600">Einzigartig</span>
-			</h1>
+				set:html={hero.title.replace(/\n/g, "<br/>")}
+			/>
 			<p class="text-lg text-rose-800 mb-8 font-light">
-				Entdecken Sie liebevoll gestaltete Unikate, inspirierende
-				Projekte und kreative Workshops.
+				{hero.subtitle}
 			</p>
 			<a
-				href="/products"
+				href={hero.buttonLink}
 				class="inline-block bg-rose-600 hover:bg-rose-700 text-white font-medium py-3 px-8 rounded-full transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
 			>
-				Zum Shop
+				{hero.buttonText}
 			</a>
 		</div>
 	</section>
@@ -65,9 +45,9 @@ const featuredCategories = [
 		</h2>
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 			{
-				featuredCategories.map((cat) => (
+				features.map((cat: any) => (
 					<a
-						href={cat.href}
+						href={cat.link}
 						class="group relative block overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition"
 					>
 						<div class="aspect-[4/3] overflow-hidden">
@@ -93,28 +73,24 @@ const featuredCategories = [
 		class="mb-20 grid md:grid-cols-2 gap-12 items-center bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-rose-50"
 	>
 		<div class="order-2 md:order-1">
-			<h2 class="text-3xl font-serif text-rose-900 mb-6">
-				Über {siteConfig.title}
+			<h2 class="text-3xl font-serif text-rose-950 mb-6">
+				{intro.title}
 			</h2>
 			<p class="text-rose-800 leading-relaxed mb-6">
-				Wir sind eine kleine Manufaktur mit einer großen Leidenschaft
-				für Details. Jedes Stück in unserem Shop ist ein Unikat,
-				gefertigt mit Sorgfalt und Liebe. Neben unseren Produkten bieten
-				wir auch Einblicke in unsere Projekte und laden Sie herzlich zu
-				unseren Workshops ein.
+				{intro.text}
 			</p>
 			<a
-				href="/about"
+				href={intro.linkUrl}
 				class="text-rose-600 font-medium hover:text-rose-800 underline decoration-rose-300 underline-offset-4"
 			>
-				Mehr erfahren &rarr;
+				{intro.linkText} &rarr;
 			</a>
 		</div>
 		<div
 			class="order-1 md:order-2 aspect-square rounded-2xl overflow-hidden bg-rose-100"
 		>
 			<img
-				src="https://placehold.co/600x600/fecdd3/be123c?text=About+Us"
+				src={intro.image}
 				alt="About Us"
 				class="w-full h-full object-cover"
 			/>
@@ -124,7 +100,7 @@ const featuredCategories = [
 	<!-- Instagram / Social Feed Placeholder -->
 	<section class="text-center mb-16">
 		<h2 class="text-2xl font-serif text-rose-900 mb-2">
-			@derrosaknopf auf Instagram
+			@{siteConfig.social.instagram.split("/").pop()} auf Instagram
 		</h2>
 		<p class="text-rose-500 mb-8">
 			Folgen Sie uns für tägliche Inspiration
