@@ -1,0 +1,50 @@
+---
+import { siteConfig } from "../data/siteConfig";
+import { Icon } from "astro-icon/components";
+// Note: We might need to install icon packs if we use specific icons, currently just using text or placeholder.
+---
+
+<header
+    class="bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-rose-100 shadow-sm"
+>
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <!-- Logo -->
+        <a
+            href="/"
+            class="text-2xl font-serif font-bold text-rose-900 hover:text-rose-700 transition"
+        >
+            {siteConfig.title}
+        </a>
+
+        <!-- Navigation (Desktop) -->
+        <nav class="hidden md:flex gap-6 items-center">
+            {
+                siteConfig.navigation.map((item) => (
+                    <a
+                        href={item.href}
+                        class="text-sm uppercase tracking-wide font-medium hover:text-rose-600 transition decoration-rose-300 underline-offset-4 hover:underline"
+                    >
+                        {item.name}
+                    </a>
+                ))
+            }
+        </nav>
+
+        <!-- Mobile Menu Button (Placeholder for JS interactivity later) -->
+        <button class="md:hidden text-rose-900" aria-label="Menu">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+            </svg>
+        </button>
+    </div>
+</header>

@@ -1,0 +1,40 @@
+---
+import { siteConfig } from "../data/siteConfig";
+const today = new Date();
+---
+
+<footer class="bg-rose-100 border-t border-rose-200 mt-12 py-12">
+    <div class="container mx-auto px-4 text-center">
+        <div class="font-serif text-xl font-bold text-rose-900 mb-4">
+            {siteConfig.title}
+        </div>
+
+        <div class="flex justify-center gap-6 mb-8 text-rose-800">
+            <a
+                href={siteConfig.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-rose-600 transition"
+            >
+                Instagram
+            </a>
+            <a
+                href={`mailto:${siteConfig.social.email}`}
+                class="hover:text-rose-600 transition"
+            >
+                Email
+            </a>
+        </div>
+
+        <div class="text-sm text-rose-700/80 mb-8 space-x-4">
+            <a href="/imprint" class="hover:text-rose-900">Impressum</a>
+            <a href="/privacy" class="hover:text-rose-900">Datenschutz</a>
+        </div>
+
+        <div class="text-xs text-rose-600/60">
+            &copy; {today.getFullYear()}
+            {siteConfig.title}. All rights reserved. <br />
+            Designed for Performance & Privacy.
+        </div>
+    </div>
+</footer>

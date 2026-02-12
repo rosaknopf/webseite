@@ -1,0 +1,63 @@
+---
+import '../styles/global.css';
+import '@fontsource/playfair-display';
+import '@fontsource/inter';
+import { siteConfig } from '../data/siteConfig';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+}
+
+const { 
+	title = siteConfig.title, 
+	description = siteConfig.description,
+	image = '/og-image.png'
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang={siteConfig.language}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(image, Astro.url)} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={new URL(image, Astro.url)} />
+	</head>
+	<body class="bg-rose-50 text-brand-text min-h-screen flex flex-col font-sans">
+		{siteConfig.holidayMode.enabled && (
+			<div class="bg-rose-900 text-white text-center py-2 px-4 shadow sticky top-0 z-50">
+				<p class="text-sm font-medium">🌴 {siteConfig.holidayMode.message}</p>
+			</div>
+		)}
+		
+		<Header />
+		
+		<main class="flex-grow container mx-auto px-4 py-8">
+			<slot />
+		</main>
+
+		<Footer />
+	</body>
+</html>

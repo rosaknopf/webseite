@@ -1,0 +1,90 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { siteConfig } from "../../data/siteConfig";
+
+const courses = (await getCollection("courses")).sort(
+    (a, b) => new Date(a.data.date).valueOf() - new Date(b.data.date).valueOf(),
+);
+---
+
+<Layout
+    title={`Kurse | ${siteConfig.title}`}
+    description="Workshops und Kurse in unserer Manufaktur."
+>
+    <section class="max-w-5xl mx-auto py-12 px-4">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-serif text-rose-950 mb-4">
+                Kurse & Workshops
+            </h1>
+            <p class="text-rose-700/80 max-w-2xl mx-auto">
+                Lernen Sie neue Techniken in gemütlicher Atmosphäre.
+                <br />
+                <span class="text-sm italic mt-2 block"
+                    >Bitte beachten Sie: Buchungen erfolgen derzeit nur per
+                    E-Mail oder Telefon.</span
+                >
+            </p>
+        </div>
+
+        <div class="space-y-8">
+            {
+                courses.map((course) => (
+                    <a
+                        href={`/courses/${course.slug}/`}
+                        class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition border border-rose-50 flex flex-col md:flex-row"
+                    >
+                        <div class="md:w-1/3 aspect-video md:aspect-auto overflow-hidden bg-rose-100 relative">
+                            {course.data.heroImage ? (
+                                <img
+                                    src={course.data.heroImage}
+                                    alt=""
+                                    class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+                                />
+                            ) : (
+                                <div class="w-full h-full flex items-center justify-center text-rose-300 bg-rose-50">
+                                    <span class="text-4xl opacity-20">🎓</span>
+                                </div>
+                            )}
+                            <div class="absolute bottom-0 left-0 bg-white/90 px-4 py-2 text-rose-900 font-bold font-serif text-lg rounded-tr-xl">
+                                {new Date(course.data.date).toLocaleDateString(
+                                    "de-DE",
+                                )}
+                            </div>
+                        </div>
+                        <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h2 class="text-2xl font-serif font-bold text-rose-900 mb-2 group-hover:text-rose-600 transition">
+                                    {course.data.title}
+                                </h2>
+                                <div class="flex flex-wrap gap-4 text-sm text-rose-600 mb-4">
+                                    {course.data.location && (
+                                        <span class="flex items-center gap-1">
+                                            📍 {course.data.location}
+                                        </span>
+                                    )}
+                                    {course.data.duration && (
+                                        <span class="flex items-center gap-1">
+                                            ⏱️ {course.data.duration}
+                                        </span>
+                                    )}
+                                    {course.data.price && (
+                                        <span class="flex items-center gap-1 font-bold">
+                                            💶 {course.data.price} €
+                                        </span>
+                                    )}
+                                </div>
+                                <p class="text-rose-700/80 mb-4 line-clamp-2">
+                                    {course.data.description}
+                                </p>
+                            </div>
+                            <div class="flex items-center text-rose-600 font-medium group-hover:translate-x-1 transition-transform">
+                                Details ansehen & Kontakt aufnehmen →
+                            </div>
+                        </div>
+                    </a>
+                ))
+            }
+        </div>
+    </section>
+</Layout>

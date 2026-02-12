@@ -1,0 +1,123 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { siteConfig } from "../../data/siteConfig";
+
+export async function getStaticPaths() {
+    const courses = await getCollection("courses");
+    return courses.map((course) => ({
+        params: { slug: course.slug },
+        props: course,
+    }));
+}
+type Props = CollectionEntry<"courses">;
+
+const course = Astro.props;
+const { Content } = await course.render();
+
+const courseDate = new Date(course.data.date).toLocaleDateString("de-DE", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+});
+---
+
+<Layout
+    title={`${course.data.title} | Kurs`}
+    description={course.data.description}
+    image={course.data.heroImage}
+>
+    <article class="max-w-4xl mx-auto px-4 py-12">
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div class="md:col-span-2">
+                <h1
+                    class="text-4xl md:text-5xl font-serif font-bold text-rose-950 mb-6 leading-tight"
+                >
+                    {course.data.title}
+                </h1>
+                <div
+                    class="prose prose-rose prose-lg text-rose-900/90 font-sans"
+                >
+                    <Content />
+                </div>
+            </div>
+
+            <div class="md:col-span-1">
+                <div
+                    class="bg-rose-50 p-6 rounded-2xl border border-rose-100 shadow-sm sticky top-24"
+                >
+                    <h3 class="text-xl font-serif font-bold text-rose-900 mb-4">
+                        Kursdetails
+                    </h3>
+
+                    <div class="space-y-4 text-rose-800 mb-6">
+                        <div>
+                            <div
+                                class="text-xs uppercase text-rose-500 font-bold tracking-wide"
+                            >
+                                Wann?
+                            </div>
+                            <div class="font-medium">{courseDate}</div>
+                            {
+                                course.data.duration && (
+                                    <div class="text-sm opacity-80">
+                                        Dauer: {course.data.duration}
+                                    </div>
+                                )
+                            }
+                        </div>
+
+                        {
+                            course.data.location && (
+                                <div>
+                                    <div class="text-xs uppercase text-rose-500 font-bold tracking-wide">
+                                        Wo?
+                                    </div>
+                                    <div class="font-medium">
+                                        {course.data.location}
+                                    </div>
+                                </div>
+                            )
+                        }
+
+                        {
+                            course.data.price && (
+                                <div>
+                                    <div class="text-xs uppercase text-rose-500 font-bold tracking-wide">
+                                        Preis
+                                    </div>
+                                    <div class="text-xl font-bold text-rose-900">
+                                        {course.data.price} €
+                                    </div>
+                                </div>
+                            )
+                        }
+                    </div>
+
+                    <hr class="border-rose-200 mb-6" />
+
+                    <p class="text-sm text-rose-700 mb-4">
+                        Interesse? Melden Sie sich gerne per E-Mail oder Telefon
+                        an.
+                    </p>
+
+                    <a
+                        href={`mailto:${siteConfig.social.email}?subject=Anfrage für Kurs: ${course.data.title}`}
+                        class="block w-full text-center bg-rose-600 hover:bg-rose-700 text-white font-medium py-3 px-4 rounded-lg transition mb-3"
+                    >
+                        Anfragen per E-Mail
+                    </a>
+                    <a
+                        href={`tel:${siteConfig.social.phone}`}
+                        class="block w-full text-center bg-white border border-rose-200 hover:bg-rose-50 text-rose-900 font-medium py-3 px-4 rounded-lg transition text-sm"
+                    >
+                        Anrufen: {siteConfig.social.phone}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+</Layout>

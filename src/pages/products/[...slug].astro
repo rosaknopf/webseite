@@ -1,0 +1,87 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import BuyButton from "../../components/BuyButton.astro";
+
+export async function getStaticPaths() {
+    const products = await getCollection("products");
+    return products.map((product) => ({
+        params: { slug: product.slug },
+        props: product,
+    }));
+}
+type Props = CollectionEntry<"products">;
+
+const product = Astro.props;
+const { Content } = await product.render();
+---
+
+<Layout
+    title={`${product.data.title} | Shop`}
+    description={product.data.description}
+    image={product.data.heroImage}
+>
+    <div class="max-w-6xl mx-auto px-4 py-12">
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- Product Image(s) -->
+            <div class="space-y-4">
+                <div
+                    class="aspect-square bg-rose-50 rounded-3xl overflow-hidden border border-rose-100 relative"
+                >
+                    {
+                        product.data.heroImage ? (
+                            <img
+                                src={product.data.heroImage}
+                                alt={product.data.title}
+                                class="w-full h-full object-cover"
+                            />
+                        ) : (
+                            <div class="w-full h-full flex items-center justify-center text-rose-200">
+                                <span class="text-8xl">🧶</span>
+                            </div>
+                        )
+                    }
+                    {
+                        product.data.isSoldOut && (
+                            <div class="absolute inset-0 bg-white/30 backdrop-blur-sm flex items-center justify-center z-10">
+                                <span class="bg-rose-900 text-white px-6 py-3 font-bold uppercase tracking-widest text-xl rounded-full transform -rotate-12 shadow-2xl border-4 border-white">
+                                    Verkauft
+                                </span>
+                            </div>
+                        )
+                    }
+                </div>
+                <!-- Future: Additional images thumbnail grid here -->
+            </div>
+
+            <!-- Product Info -->
+            <div class="flex flex-col">
+                <div class="mb-auto">
+                    <h1
+                        class="text-4xl font-serif font-bold text-rose-950 mb-2"
+                    >
+                        {product.data.title}
+                    </h1>
+                    <div class="text-3xl font-bold text-rose-600 mb-6">
+                        {product.data.price.toFixed(2)} €
+                    </div>
+
+                    <div class="prose prose-rose text-rose-800 mb-8">
+                        <Content />
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white p-6 rounded-2xl border border-rose-100 shadow-sm sticky bottom-4 md:static"
+                >
+                    <BuyButton
+                        stripeLink={product.data.stripeLink}
+                        price={product.data.price}
+                        isSoldOut={product.data.isSoldOut}
+                        isUnique={product.data.isUnique}
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>

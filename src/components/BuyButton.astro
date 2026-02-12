@@ -1,0 +1,70 @@
+---
+import { siteConfig } from "../data/siteConfig";
+
+interface Props {
+    stripeLink?: string;
+    price: number;
+    isSoldOut?: boolean; // CMS Override
+    isUnique?: boolean; // 1-of-1 item
+}
+
+const { stripeLink, price, isSoldOut = false, isUnique = true } = Astro.props;
+
+const isHoliday = siteConfig.holidayMode.enabled;
+const isDisabled = isSoldOut || isHoliday || !stripeLink;
+
+let buttonText = "Jetzt kaufen";
+let buttonSubtext = "";
+
+if (isSoldOut) {
+    buttonText = "Ausverkauft";
+    buttonSubtext = "Dieses Unikat ist leider schon weg.";
+} else if (isHoliday) {
+    buttonText = "Pause";
+    buttonSubtext = "Bestellung im Urlaub nicht möglich.";
+} else if (!stripeLink) {
+    buttonText = "Nicht verfügbar";
+}
+---
+
+<div class="product-buy-action">
+    {
+        isDisabled ? (
+            <button
+                disabled
+                class="w-full bg-rose-200 text-rose-500 font-bold py-4 px-6 rounded-xl cursor-not-allowed opacity-70"
+            >
+                {buttonText}
+                {buttonSubtext && (
+                    <span class="block text-xs font-normal mt-1">
+                        {buttonSubtext}
+                    </span>
+                )}
+            </button>
+        ) : (
+            <a
+                href={stripeLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block w-full text-center bg-rose-600 hover:bg-rose-700 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1"
+            >
+                {buttonText} — {price.toFixed(2)} €
+                {isUnique && (
+                    <span class="block text-xs font-normal opacity-90 mt-1">
+                        Unikat - Nur 1x verfügbar
+                    </span>
+                )}
+            </a>
+        )
+    }
+
+    {
+        !isDisabled && (
+            <div class="text-center mt-3 text-xs text-rose-500">
+                Abwicklung sicher über Stripe. <br />
+                Bestellungen werden i.d.R. innerhalb von 2-3 Werktagen
+                versendet.
+            </div>
+        )
+    }
+</div>

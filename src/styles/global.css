@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/* Import Local Fonts via @fontsource packages */
+/* Note: These must be imported in the layout component usually for Astro processing, 
+   but for Tailwind v4 we can also reference the font family names if they are globally available.
+   Best practice with Astro + Tailwind v4 + Fontsource is to import them in Layout.astro to ensure bundling,
+   then reference them here or in utility classes. */
+
+@theme {
+  /* Colors - Extending the palette */
+  --color-rose-50: #fff1f2;
+  --color-rose-100: #ffe4e6;
+  --color-rose-200: #fecdd3;
+  --color-rose-300: #fda4af;
+  --color-rose-400: #fb7185;
+  --color-rose-500: #f43f5e;
+  --color-rose-600: #e11d48;
+  --color-rose-700: #be123c;
+  --color-rose-800: #9f1239;
+  --color-rose-900: #881337;
+  --color-rose-950: #4c0519;
+
+  /* Custom Brand Colors */
+  --color-brand-light: #fdf2f8; /* Very light pink background */
+  --color-brand-primary: #ec4899; /* Pink-500ish equivalent */
+  --color-brand-text: #374151; /* Gray-700 */
+  --color-brand-heading: #111827; /* Gray-900 */
+
+  /* Fonts */
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+/* Base Styles */
+@layer base {
+  html {
+    background-color: var(--color-brand-light);
+    color: var(--color-brand-text);
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    color: var(--color-brand-heading);
+    font-weight: 700;
+  }
+}

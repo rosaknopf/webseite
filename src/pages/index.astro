@@ -1,0 +1,144 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { siteConfig } from "../data/siteConfig";
+
+// Placeholder data for featured items (will replace with collection queries later)
+const featuredCategories = [
+	{
+		title: "Shop Unikate",
+		href: "/products",
+		image: "https://placehold.co/600x400/ffe4e6/be123c?text=Shop",
+	},
+	{
+		title: "Unsere Projekte",
+		href: "/projects",
+		image: "https://placehold.co/600x400/fecdd3/9f1239?text=Projects",
+	},
+	{
+		title: "Kurse & Workshops",
+		href: "/courses",
+		image: "https://placehold.co/600x400/fda4af/881337?text=Courses",
+	},
+];
+---
+
+<Layout title={siteConfig.title}>
+	<!-- Hero Section -->
+	<section
+		class="relative bg-rose-100 rounded-3xl overflow-hidden mb-16 min-h-[500px] flex items-center justify-center text-center px-4"
+	>
+		<div class="absolute inset-0 z-0 opacity-40">
+			<!-- Placeholder Hero Image - Recommend using a real image from the user assets later -->
+			<img
+				src="https://placehold.co/1200x600/fff1f2/fb7185?text=Hero+Image"
+				alt="Hero Background"
+				class="w-full h-full object-cover"
+			/>
+		</div>
+
+		<div
+			class="relative z-10 max-w-2xl bg-white/60 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-rose-200"
+		>
+			<h1
+				class="text-4xl md:text-6xl font-serif font-bold text-rose-950 mb-4"
+			>
+				Handgemacht & <br />
+				<span class="text-rose-600">Einzigartig</span>
+			</h1>
+			<p class="text-lg text-rose-800 mb-8 font-light">
+				Entdecken Sie liebevoll gestaltete Unikate, inspirierende
+				Projekte und kreative Workshops.
+			</p>
+			<a
+				href="/products"
+				class="inline-block bg-rose-600 hover:bg-rose-700 text-white font-medium py-3 px-8 rounded-full transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+			>
+				Zum Shop
+			</a>
+		</div>
+	</section>
+
+	<!-- Categories Grid -->
+	<section class="mb-20">
+		<h2 class="text-3xl font-serif text-center text-rose-900 mb-12">
+			Entdecken Sie mehr
+		</h2>
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+			{
+				featuredCategories.map((cat) => (
+					<a
+						href={cat.href}
+						class="group relative block overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition"
+					>
+						<div class="aspect-[4/3] overflow-hidden">
+							<img
+								src={cat.image}
+								alt={cat.title}
+								class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+							/>
+						</div>
+						<div class="absolute inset-0 bg-gradient-to-t from-rose-950/70 to-transparent flex items-end p-6">
+							<h3 class="text-white text-xl font-serif font-medium group-hover:underline decoration-2 underline-offset-4">
+								{cat.title}
+							</h3>
+						</div>
+					</a>
+				))
+			}
+		</div>
+	</section>
+
+	<!-- About / Introduction Teaser -->
+	<section
+		class="mb-20 grid md:grid-cols-2 gap-12 items-center bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-rose-50"
+	>
+		<div class="order-2 md:order-1">
+			<h2 class="text-3xl font-serif text-rose-900 mb-6">
+				Über {siteConfig.title}
+			</h2>
+			<p class="text-rose-800 leading-relaxed mb-6">
+				Wir sind eine kleine Manufaktur mit einer großen Leidenschaft
+				für Details. Jedes Stück in unserem Shop ist ein Unikat,
+				gefertigt mit Sorgfalt und Liebe. Neben unseren Produkten bieten
+				wir auch Einblicke in unsere Projekte und laden Sie herzlich zu
+				unseren Workshops ein.
+			</p>
+			<a
+				href="/about"
+				class="text-rose-600 font-medium hover:text-rose-800 underline decoration-rose-300 underline-offset-4"
+			>
+				Mehr erfahren &rarr;
+			</a>
+		</div>
+		<div
+			class="order-1 md:order-2 aspect-square rounded-2xl overflow-hidden bg-rose-100"
+		>
+			<img
+				src="https://placehold.co/600x600/fecdd3/be123c?text=About+Us"
+				alt="About Us"
+				class="w-full h-full object-cover"
+			/>
+		</div>
+	</section>
+
+	<!-- Instagram / Social Feed Placeholder -->
+	<section class="text-center mb-16">
+		<h2 class="text-2xl font-serif text-rose-900 mb-2">
+			@derrosaknopf auf Instagram
+		</h2>
+		<p class="text-rose-500 mb-8">
+			Folgen Sie uns für tägliche Inspiration
+		</p>
+		<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+			{
+				[1, 2, 3, 4].map((i) => (
+					<div class="aspect-square bg-rose-50 rounded-lg overflow-hidden relative group cursor-pointer">
+						<span class="absolute inset-0 flex items-center justify-center text-rose-300 opacity-50 group-hover:opacity-100 transition">
+							Instagram Post {i}
+						</span>
+					</div>
+				))
+			}
+		</div>
+	</section>
+</Layout>

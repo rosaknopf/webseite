@@ -1,0 +1,86 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { siteConfig } from "../../data/siteConfig";
+
+const products = (await getCollection("products")).sort((a, b) => {
+    // Sort logic: Available first, then by title/date
+    if (a.data.isSoldOut === b.data.isSoldOut) {
+        return 0; // Keep original order or sort by date if added
+    }
+    return a.data.isSoldOut ? 1 : -1;
+});
+---
+
+<Layout
+    title={`Shop | ${siteConfig.title}`}
+    description="Handgemachte Unikate für Sie."
+>
+    <section class="max-w-6xl mx-auto py-12">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-serif text-rose-950 mb-4">
+                Unser Shop
+            </h1>
+            <p class="text-rose-700/80 max-w-2xl mx-auto">
+                Jedes Stück ein Unikat. Mit Liebe handgefertigt.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {
+                products.map((product) => (
+                    <a
+                        href={`/products/${product.slug}/`}
+                        class={`group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-rose-50 flex flex-col h-full ${product.data.isSoldOut ? "opacity-70 grayscale-[0.5]" : ""}`}
+                    >
+                        <div class="aspect-square overflow-hidden bg-rose-100 relative">
+                            {product.data.heroImage ? (
+                                <img
+                                    src={product.data.heroImage}
+                                    alt=""
+                                    class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+                                />
+                            ) : (
+                                <div class="w-full h-full flex items-center justify-center text-rose-300 bg-rose-50">
+                                    <span class="text-6xl opacity-20">🧶</span>
+                                </div>
+                            )}
+
+                            {product.data.isSoldOut && (
+                                <div class="absolute inset-0 bg-white/50 backdrop-blur-sm flex items-center justify-center">
+                                    <span class="bg-rose-900 text-white px-4 py-2 font-bold uppercase tracking-widest text-sm rounded-full transform -rotate-12 shadow-xl border-2 border-white">
+                                        Verkauft
+                                    </span>
+                                </div>
+                            )}
+                            {!product.data.isSoldOut &&
+                                product.data.isUnique && (
+                                    <div class="absolute top-4 right-4 bg-white/90 text-rose-600 px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full shadow-sm">
+                                        Unikat
+                                    </div>
+                                )}
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="flex justify-between items-start mb-2">
+                                <h2 class="text-xl font-serif font-bold text-rose-900 group-hover:text-rose-600 transition">
+                                    {product.data.title}
+                                </h2>
+                                <span class="font-bold text-rose-800 bg-rose-50 px-2 py-1 rounded text-sm">
+                                    {product.data.price.toFixed(2)} €
+                                </span>
+                            </div>
+                            <p class="text-rose-700/80 text-sm line-clamp-2 mb-4 flex-grow">
+                                {product.data.description}
+                            </p>
+                            <span class="text-center block w-full py-2 rounded-lg bg-rose-50 text-rose-600 font-medium group-hover:bg-rose-600 group-hover:text-white transition">
+                                {product.data.isSoldOut
+                                    ? "Details ansehen"
+                                    : "Zum Produkt"}
+                            </span>
+                        </div>
+                    </a>
+                ))
+            }
+        </div>
+    </section>
+</Layout>
