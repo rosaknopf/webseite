@@ -1,0 +1,14 @@
+{
+  "title": "Der Rosa Knopf",
+  "description": "Handgemachte Unikate & Kurse",
+  "language": "de",
+  "holidayMode": {
+    "enabled": false,
+    "message": "Wir sind im Urlaub! Der Shop ist pausiert, aber schauen Sie sich gerne um."
+  },
+  "social": {
+    "instagram": "https://instagram.com/derrosaknopf",
+    "email": "kontakt@derrosaknopf.de",
+    "phone": "+49 123 456789"
+  }
+}
