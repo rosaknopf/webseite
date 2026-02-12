@@ -1,0 +1,33 @@
+{
+    "hero": {
+        "title": "Handgemacht & Einzigartig",
+        "subtitle": "Entdecken Sie liebevoll gestaltete Unikate, inspirierende Projekte und kreative Workshops.",
+        "image": "https://placehold.co/1200x600/fff1f2/fb7185?text=Hero+Image",
+        "buttonText": "Zum Shop",
+        "buttonLink": "/products"
+    },
+    "intro": {
+        "title": "Über Der Rosa Knopf",
+        "text": "Wir sind eine kleine Manufaktur mit einer großen Leidenschaft für Details. Jedes Stück in unserem Shop ist ein Unikat, gefertigt mit Sorgfalt und Liebe.",
+        "image": "https://placehold.co/600x600/fecdd3/be123c?text=About+Us",
+        "linkText": "Mehr erfahren",
+        "linkUrl": "/about"
+    },
+    "features": [
+        {
+            "title": "Shop Unikate",
+            "link": "/products",
+            "image": "https://placehold.co/600x400/ffe4e6/be123c?text=Shop"
+        },
+        {
+            "title": "Unsere Projekte",
+            "link": "/projects",
+            "image": "https://placehold.co/600x400/fecdd3/9f1239?text=Projects"
+        },
+        {
+            "title": "Kurse & Workshops",
+            "link": "/courses",
+            "image": "https://placehold.co/600x400/fda4af/881337?text=Courses"
+        }
+    ]
+}
