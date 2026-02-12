@@ -1,5 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
+import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 import BuyButton from "../../components/BuyButton.astro";
 
@@ -19,7 +20,7 @@ const { Content } = await product.render();
 <Layout
     title={`${product.data.title} | Shop`}
     description={product.data.description}
-    image={product.data.heroImage}
+    image={product.data.heroImage?.src}
 >
     <div class="max-w-6xl mx-auto px-4 py-12">
         <div class="grid md:grid-cols-2 gap-12">
@@ -30,7 +31,7 @@ const { Content } = await product.render();
                 >
                     {
                         product.data.heroImage ? (
-                            <img
+                            <Image
                                 src={product.data.heroImage}
                                 alt={product.data.title}
                                 class="w-full h-full object-cover"

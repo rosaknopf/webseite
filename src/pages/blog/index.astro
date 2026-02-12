@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 import { siteConfig } from "../../data/siteConfig";
 
 const posts = (await getCollection("blog"))
@@ -32,9 +33,9 @@ const posts = (await getCollection("blog"))
                     >
                         <div class="aspect-[16/10] overflow-hidden bg-rose-100">
                             {post.data.heroImage ? (
-                                <img
+                                <Image
                                     src={post.data.heroImage}
-                                    alt=""
+                                    alt={post.data.title}
                                     class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
                                 />
                             ) : (

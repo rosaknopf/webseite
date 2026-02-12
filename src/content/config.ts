@@ -1,32 +1,32 @@
 import { defineCollection, z } from 'astro:content';
 
 const blog = defineCollection({
-    schema: z.object({
+    schema: ({ image }) => z.object({
         title: z.string(),
         description: z.string(),
         pubDate: z.coerce.date(),
         updatedDate: z.coerce.date().optional(),
-        heroImage: z.string().optional(),
+        heroImage: image().optional(),
         draft: z.boolean().default(false),
     }),
 });
 
 const projects = defineCollection({
-    schema: z.object({
+    schema: ({ image }) => z.object({
         title: z.string(),
         description: z.string(),
         pubDate: z.coerce.date(),
-        heroImage: z.string().optional(),
+        heroImage: image().optional(),
         status: z.enum(['Completed', 'In Progress']).default('Completed'),
     }),
 });
 
 const products = defineCollection({
-    schema: z.object({
+    schema: ({ image }) => z.object({
         title: z.string(),
         description: z.string(),
         price: z.number(), // Price in EUR
-        heroImage: z.string().optional(),
+        heroImage: image().optional(),
         stripeLink: z.string().optional(), // Payment Link URL
         isSoldOut: z.boolean().default(false),
         isUnique: z.boolean().default(true), // 1-of-1 item
@@ -35,15 +35,40 @@ const products = defineCollection({
 });
 
 const courses = defineCollection({
-    schema: z.object({
+    schema: ({ image }) => z.object({
         title: z.string(),
         description: z.string(),
         date: z.string().or(z.date()), // Flexible date string or object
         price: z.number().optional(),
-        heroImage: z.string().optional(),
+        heroImage: image().optional(),
         duration: z.string().optional(),
         location: z.string().optional(),
     }),
 });
 
-export const collections = { blog, projects, products, courses };
+const pages = defineCollection({
+    schema: ({ image }) => z.object({
+        hero: z.object({
+            title: z.string(),
+            subtitle: z.string(),
+            image: image(),
+            buttonText: z.string(),
+            buttonLink: z.string(),
+        }),
+        intro: z.object({
+            title: z.string(),
+            text: z.string(),
+            image: image(),
+            linkText: z.string(),
+            linkUrl: z.string(),
+        }),
+        features: z.array(z.object({
+            title: z.string(),
+            link: z.string(),
+            image: image(),
+        })),
+    }),
+});
+
+export const collections = { blog, projects, products, courses, pages };
+

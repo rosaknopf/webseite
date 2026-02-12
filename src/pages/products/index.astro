@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 import { siteConfig } from "../../data/siteConfig";
 
 const products = (await getCollection("products")).sort((a, b) => {
@@ -35,9 +36,9 @@ const products = (await getCollection("products")).sort((a, b) => {
                     >
                         <div class="aspect-square overflow-hidden bg-rose-100 relative">
                             {product.data.heroImage ? (
-                                <img
+                                <Image
                                     src={product.data.heroImage}
-                                    alt=""
+                                    alt={product.data.title}
                                     class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
                                 />
                             ) : (

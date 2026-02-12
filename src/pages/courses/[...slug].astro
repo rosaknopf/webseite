@@ -28,7 +28,7 @@ const courseDate = new Date(course.data.date).toLocaleDateString("de-DE", {
 <Layout
     title={`${course.data.title} | Kurs`}
     description={course.data.description}
-    image={course.data.heroImage}
+    image={course.data.heroImage?.src}
 >
     <article class="max-w-4xl mx-auto px-4 py-12">
         <div class="grid md:grid-cols-3 gap-8 mb-12">

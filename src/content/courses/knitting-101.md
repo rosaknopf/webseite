@@ -3,7 +3,7 @@ title: "Strickkurs für Anfänger"
 description: "Lernen Sie die Grundlagen."
 date: "2024-03-15T14:00:00"
 price: 29.00
-heroImage: "https://placehold.co/800x400"
+heroImage: "../../assets/uploads/anthony-fomin-ohcbhruzoya-unsplash.jpg"
 duration: "3 Stunden"
 location: "Atelier Rosa Knopf"
 ---

@@ -1,5 +1,6 @@
 ---
 import Layout from "./Layout.astro";
+import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
@@ -7,20 +8,20 @@ interface Props {
     description: string;
     pubDate: Date;
     updatedDate?: Date;
-    heroImage?: string;
+    heroImage?: any;
 }
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
-<Layout title={title} description={description} image={heroImage}>
+<Layout title={title} description={description} image={heroImage?.src}>
     <article class="max-w-3xl mx-auto px-4 py-12">
         <div class="mb-8 text-center">
             {
                 heroImage && (
-                    <img
+                    <Image
                         src={heroImage}
-                        alt=""
+                        alt={title}
                         class="w-full aspect-video object-cover rounded-2xl shadow-md mb-8"
                     />
                 )

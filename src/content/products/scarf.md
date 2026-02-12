@@ -2,7 +2,7 @@
 title: "Rosa Schal"
 description: "Ein handgestrickter Schal."
 price: 49.99
-heroImage: "https://placehold.co/500x500"
+heroImage: "../../assets/uploads/anthony-fomin-ohcbhruzoya-unsplash.jpg"
 stripeLink: "https://stripe.com"
 isUnique: true
 isSoldOut: false
