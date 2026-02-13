@@ -1,0 +1,94 @@
+
+> der-rosa-knopf@0.0.1 build
+> astro build
+
+14:33:18 [content] Syncing content
+14:33:18 [content] Synced content
+14:33:18 [types] Generated 828ms
+14:33:18 [build] output: "static"
+14:33:18 [build] mode: "static"
+14:33:18 [build] directory: /Users/sascha/Documents/Repos/der-rosa-knopf/dist/
+14:33:18 [build] Collecting build info...
+14:33:18 [build] ✓ Completed in 863ms.
+14:33:18 [build] Building static entrypoints...
+14:33:21 [vite] ✓ built in 3.37s
+14:33:21 [build] ✓ Completed in 3.40s.
+
+ building client (vite) 
+14:33:21 [vite] transforming...
+14:33:21 [vite] ✓ 6 modules transformed.
+14:33:21 [vite] rendering chunks...
+14:33:21 [vite] computing gzip size...
+14:33:21 [vite] dist/_astro/_...slug_.cPPnkASS.css                                       4.62 kB │ gzip:  1.47 kB
+14:33:21 [vite] dist/_astro/_...slug_.astro_astro_type_script_index_0_lang.DD22ALnG.js  16.17 kB │ gzip:  5.15 kB
+14:33:21 [vite] dist/_astro/photoswipe.esm.CKV1Bsxh.js                                  60.41 kB │ gzip: 17.43 kB
+14:33:21 [vite] ✓ built in 187ms
+
+ generating static routes 
+14:33:21 ▶ src/pages/about.astro
+14:33:21   └─ /about/index.html (+5ms) 
+14:33:21 ▶ src/pages/blog/index.astro
+14:33:21   └─ /blog/index.html (+33ms) 
+14:33:21 ▶ src/pages/blog/[...slug].astro
+14:33:21   └─ /blog/first-post/index.html (+2ms) 
+14:33:21 ▶ src/pages/courses/index.astro
+14:33:21   └─ /courses/index.html (+2ms) 
+14:33:21 ▶ src/pages/courses/[...slug].astro
+14:33:21   └─ /courses/knitting-101/index.html (+2ms) 
+14:33:21 ▶ src/pages/imprint.astro
+14:33:21   └─ /imprint/index.html (+1ms) 
+14:33:22 λ src/pages/og/products/[...slug].png.ts
+14:33:22   └─ /og/products/scarf.png[OG] Processing product: scarf.md
+[OG] Product file path: /Users/sascha/Documents/Repos/der-rosa-knopf/src/content/products/scarf.md
+[OG] Found heroImage relative path: ../../assets/uploads/anthony-fomin-ohcbhruzoya-unsplash.jpg
+[OG] Resolved absolute image path: /Users/sascha/Documents/Repos/der-rosa-knopf/src/assets/uploads/anthony-fomin-ohcbhruzoya-unsplash.jpg
+[OG] Image file exists! Reading...
+[OG] Image loaded: true
+ (+3.54s) 
+14:33:25 ▶ src/pages/privacy.astro
+14:33:25   └─ /privacy/index.html (+20ms) 
+14:33:25 ▶ src/pages/products/index.astro
+14:33:25   └─ /products/index.html (+9ms) 
+14:33:25 ▶ src/pages/products/[...slug].astro
+14:33:25   └─ /products/scarf/index.html (+13ms) 
+14:33:25 ▶ src/pages/projects/index.astro
+14:33:25   └─ /projects/index.html (+3ms) 
+14:33:25 ▶ src/pages/projects/[...slug].astro
+14:33:25   └─ /projects/project-1/index.html (+36ms) 
+14:33:25 ▶ src/pages/index.astro
+14:33:25   └─ /index.html (+4ms) 
+14:33:25 ✓ Completed in 3.93s.
+
+ generating optimized images 
+14:33:25   ▶ /_astro/seamstress.DEMzWa9n_1koWos.webp (reused cache entry) (+6ms) (1/28)
+14:33:25   ▶ /_astro/anthony-fomin-ohcbhruzoya-unsplash.CZkwVBl8_1NiX3d.webp (reused cache entry) (+7ms) (2/28)
+14:33:25   ▶ /_astro/seamstress.DEMzWa9n_PiJz1.webp (reused cache entry) (+3ms) (3/28)
+14:33:25   ▶ /_astro/anthony-fomin-ohcbhruzoya-unsplash.CZkwVBl8_23JneL.webp (reused cache entry) (+3ms) (4/28)
+14:33:25   ▶ /_astro/seamstress.DEMzWa9n_Z25jSlT.webp (reused cache entry) (+3ms) (5/28)
+14:33:25   ▶ /_astro/seamstress.DEMzWa9n_Tz8yM.jpg (reused cache entry) (+3ms) (6/28)
+14:33:25   ▶ /_astro/anthony-fomin-ohcbhruzoya-unsplash.CZkwVBl8_tQoGx.webp (reused cache entry) (+4ms) (7/28)
+14:33:25   ▶ /_astro/seamstress.DEMzWa9n_2kRSxu.webp (reused cache entry) (+2ms) (8/28)
+14:33:25   ▶ /_astro/anthony-fomin-ohcbhruzoya-unsplash.CZkwVBl8_Z1A1sBt.jpg (reused cache entry) (+3ms) (9/28)
+14:33:25   ▶ /_astro/seamstress.DEMzWa9n_29nRMa.webp (reused cache entry) (+3ms) (10/28)
+14:33:25   ▶ /_astro/anthony-fomin-ohcbhruzoya-unsplash.CZkwVBl8_1MngdT.webp (reused cache entry) (+3ms) (11/28)
+14:33:25   ▶ /_astro/seamstress.DEMzWa9n_1Nfin2.webp (reused cache entry) (+3ms) (12/28)
+14:33:25   ▶ /_astro/anthony-fomin-ohcbhruzoya-unsplash.CZkwVBl8_4LVhU.webp (reused cache entry) (+4ms) (13/28)
+14:33:25   ▶ /_astro/seamstress.DEMzWa9n_Z27onAn.webp (reused cache entry) (+2ms) (14/28)
+14:33:25   ▶ /_astro/seamstress.DEMzWa9n_Z1APpmq.webp (reused cache entry) (+4ms) (15/28)
+14:33:25   ▶ /_astro/anthony-fomin-ohcbhruzoya-unsplash.CZkwVBl8_2qEnNU.webp (reused cache entry) (+5ms) (16/28)
+14:33:25   ▶ /_astro/seamstress.DEMzWa9n_Z1Rk9jO.webp (reused cache entry) (+2ms) (17/28)
+14:33:25   ▶ /_astro/seamstress.DEMzWa9n_ZjytNs.webp (reused cache entry) (+2ms) (18/28)
+14:33:25   ▶ /_astro/anthony-fomin-ohcbhruzoya-unsplash.CZkwVBl8_Zj2ACp.webp (reused cache entry) (+2ms) (19/28)
+14:33:25   ▶ /_astro/seamstress.DEMzWa9n_2mDwhN.webp (reused cache entry) (+2ms) (20/28)
+14:33:25   ▶ /_astro/anthony-fomin-ohcbhruzoya-unsplash.CZkwVBl8_Z26yJ8c.webp (reused cache entry) (+2ms) (21/28)
+14:33:25   ▶ /_astro/seamstress.DEMzWa9n_2oQ9ug.webp (reused cache entry) (+2ms) (22/28)
+14:33:25   ▶ /_astro/anthony-fomin-ohcbhruzoya-unsplash.CZkwVBl8_MDj3k.webp (reused cache entry) (+4ms) (23/28)
+14:33:25   ▶ /_astro/seamstress.DEMzWa9n_Z1KAXlV.webp (reused cache entry) (+3ms) (24/28)
+14:33:25   ▶ /_astro/anthony-fomin-ohcbhruzoya-unsplash.CZkwVBl8_Z35m6R.webp (reused cache entry) (+3ms) (25/28)
+14:33:25   ▶ /_astro/anthony-fomin-ohcbhruzoya-unsplash.CZkwVBl8_97sBJ.webp (reused cache entry) (+4ms) (26/28)
+14:33:25   ▶ /_astro/anthony-fomin-ohcbhruzoya-unsplash.CZkwVBl8_Z2szi7F.webp (reused cache entry) (+2ms) (27/28)
+14:33:25   ▶ /_astro/anthony-fomin-ohcbhruzoya-unsplash.CZkwVBl8_Z1enEOQ.webp (reused cache entry) (+3ms) (28/28)
+14:33:25 ✓ Completed in 52ms.
+
+14:33:25 [build] 12 page(s) built in 8.49s
+14:33:25 [build] Complete!

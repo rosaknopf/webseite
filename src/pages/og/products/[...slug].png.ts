@@ -4,6 +4,7 @@ import satori from "satori";
 import { Resvg } from "@resvg/resvg-js";
 import fs from "fs";
 import path from "path";
+import sharp from "sharp";
 
 export async function getStaticPaths() {
     const products = await getCollection("products");
@@ -33,25 +34,37 @@ export const GET: APIRoute = async ({ props }) => {
     // Load Image
     let imageBuffer: Buffer | null = null;
 
-    // Strategy: Read the raw markdown file to get the relative path of the image
-    // This avoids issues with Astro's image() schema transformation in this context
     try {
-        const productFilePath = path.join(process.cwd(), "src/content/products", `${product.id}`); // product.id includes extension e.g. "scarf.md"
-        if (fs.existsSync(productFilePath)) {
-            const fileContent = fs.readFileSync(productFilePath, "utf-8");
-            // Simple regex to find heroImage: ...
-            const match = fileContent.match(/heroImage:\s*["']?([^"'\n]+)["']?/);
-            if (match && match[1]) {
-                const relativePath = match[1]; // e.g. "../../assets/uploads/image.jpg"
-                // Resolve relative to src/content/products/
-                const absolutePath = path.resolve(path.dirname(productFilePath), relativePath);
-                if (fs.existsSync(absolutePath)) {
-                    imageBuffer = fs.readFileSync(absolutePath);
+        // 1. Try to use fsPath from Astro's image() schema
+        const heroImage: any = product.data.heroImage;
+        if (heroImage?.fsPath && fs.existsSync(heroImage.fsPath)) {
+            imageBuffer = fs.readFileSync(heroImage.fsPath);
+        } else {
+            // 2. Fallback: Resolve path manually from markdown frontmatter
+            const productFilePath = path.join(process.cwd(), "src/content/products", `${product.id}`);
+            if (fs.existsSync(productFilePath)) {
+                const fileContent = fs.readFileSync(productFilePath, "utf-8");
+                const match = fileContent.match(/heroImage:\s*["']?([^"'\n]+)["']?/);
+                if (match && match[1]) {
+                    const relativePath = match[1];
+                    const absolutePath = path.resolve(path.dirname(productFilePath), relativePath);
+                    if (fs.existsSync(absolutePath)) {
+                        imageBuffer = fs.readFileSync(absolutePath);
+                    }
                 }
             }
         }
+
+        // 3. Resize Image (Critical for Satori performance with large images)
+        if (imageBuffer) {
+            imageBuffer = await sharp(imageBuffer)
+                .resize({ width: 1200, height: 630, fit: "cover" })
+                .jpeg({ quality: 80 })
+                .toBuffer();
+        }
+
     } catch (e) {
-        console.error("Error loading OG image:", e);
+        console.error("Error loading/resizing OG image:", e);
     }
 
     const imageBase64 = imageBuffer ? `data:image/jpeg;base64,${imageBuffer.toString("base64")}` : "";
