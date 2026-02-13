@@ -21,4 +21,16 @@ features:
   - title: "Kurse & Workshops"
     link: "/courses"
     image: "../../assets/uploads/seamstress.jpg"
+instagram:
+  enabled: true
+  title: "Folgen Sie uns auf Instagram"
+  images:
+    - image: "../../assets/uploads/anthony-fomin-ohcbhruzoya-unsplash.jpg"
+      link: "https://instagram.com"
+    - image: "../../assets/uploads/seamstress.jpg"
+      link: "https://instagram.com"
+    - image: "../../assets/uploads/anthony-fomin-ohcbhruzoya-unsplash.jpg"
+      link: "https://instagram.com"
+    - image: "../../assets/uploads/seamstress.jpg"
+      link: "https://instagram.com"
 ---

@@ -67,6 +67,14 @@ const pages = defineCollection({
             link: z.string(),
             image: image(),
         })),
+        instagram: z.object({
+            enabled: z.boolean().default(true),
+            title: z.string(),
+            images: z.array(z.object({
+                image: image(),
+                link: z.string().optional(),
+            })),
+        }).optional(),
     }),
 });
 

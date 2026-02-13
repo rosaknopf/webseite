@@ -107,23 +107,43 @@ const { hero, features, intro } = homeEntry.data;
 	</section>
 
 	<!-- Instagram / Social Feed Placeholder -->
-	<section class="text-center mb-16">
-		<h2 class="text-2xl font-serif text-rose-900 mb-2">
-			@{siteConfig.social.instagram.split("/").pop()} auf Instagram
-		</h2>
-		<p class="text-rose-500 mb-8">
-			Folgen Sie uns für tägliche Inspiration
-		</p>
-		<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-			{
-				[1, 2, 3, 4].map((i) => (
-					<div class="aspect-square bg-rose-50 rounded-lg overflow-hidden relative group cursor-pointer">
-						<span class="absolute inset-0 flex items-center justify-center text-rose-300 opacity-50 group-hover:opacity-100 transition">
-							Instagram Post {i}
-						</span>
-					</div>
-				))
-			}
-		</div>
-	</section>
+	<!-- Instagram / Social Feed Gallery -->
+	{
+		homeEntry.data.instagram?.enabled && (
+			<section class="text-center mb-16">
+				<h2 class="text-2xl font-serif text-rose-900 mb-2">
+					{homeEntry.data.instagram.title}
+				</h2>
+				<a
+					href={siteConfig.social.instagram}
+					class="text-rose-500 mb-8 inline-block hover:text-rose-700 hover:underline transition"
+					target="_blank"
+				>
+					@{siteConfig.social.instagram.split("/").pop()}
+				</a>
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+					{homeEntry.data.instagram.images.map((post: any) => (
+						<a
+							href={post.link || siteConfig.social.instagram}
+							target="_blank"
+							class="aspect-square bg-rose-50 rounded-lg overflow-hidden relative group cursor-pointer block"
+						>
+							<Image
+								src={post.image}
+								alt="Instagram Post"
+								class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+								width={400}
+								densities={[1.5, 2]}
+							/>
+							<div class="absolute inset-0 bg-rose-900/0 group-hover:bg-rose-900/20 transition duration-300 flex items-center justify-center">
+								<span class="opacity-0 group-hover:opacity-100 text-white text-3xl transition transform scale-50 group-hover:scale-100">
+									❤️
+								</span>
+							</div>
+						</a>
+					))}
+				</div>
+			</section>
+		)
+	}
 </Layout>

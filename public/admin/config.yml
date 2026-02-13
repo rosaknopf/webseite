@@ -58,6 +58,18 @@ collections:
           - {label: "Bild", name: "image", widget: "image"}
           - {label: "Link Text", name: "linkText", widget: "string"}
           - {label: "Link URL", name: "linkUrl", widget: "string"}
+      - label: "Instagram Galerie (Unten)"
+        name: "instagram"
+        widget: "object"
+        fields:
+          - {label: "Anzeigen?", name: "enabled", widget: "boolean", default: true}
+          - {label: "Überschrift", name: "title", widget: "string", default: "Folgen Sie uns auf Instagram"}
+          - label: "Bilder"
+            name: "images"
+            widget: "list"
+            fields:
+              - {label: "Bild", name: "image", widget: "image"}
+              - {label: "Link zum Post", name: "link", widget: "string", required: false}
 
   # Shop Products
   - name: "products"
