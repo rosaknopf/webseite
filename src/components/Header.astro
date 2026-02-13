@@ -30,8 +30,12 @@ import { Icon } from "astro-icon/components";
             }
         </nav>
 
-        <!-- Mobile Menu Button (Placeholder for JS interactivity later) -->
-        <button class="md:hidden text-rose-900" aria-label="Menu">
+        <!-- Mobile Menu Button -->
+        <button
+            id="mobile-menu-btn"
+            class="md:hidden text-rose-900 focus:outline-none"
+            aria-label="Menu"
+        >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -47,4 +51,33 @@ import { Icon } from "astro-icon/components";
             </svg>
         </button>
     </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div
+        id="mobile-menu"
+        class="hidden md:hidden border-t border-rose-100 bg-rose-50/95 backdrop-blur-md"
+    >
+        <nav class="container mx-auto px-4 py-4 flex flex-col gap-4">
+            {
+                siteConfig.navigation.map((item) => (
+                    <a
+                        href={item.href}
+                        class="text-lg font-medium text-rose-900 hover:text-rose-600 transition py-2 border-b border-rose-100 last:border-0"
+                    >
+                        {item.name}
+                    </a>
+                ))
+            }
+        </nav>
+    </div>
 </header>
+<script>
+    const btn = document.getElementById("mobile-menu-btn");
+    const menu = document.getElementById("mobile-menu");
+
+    if (btn && menu) {
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    }
+</script>
