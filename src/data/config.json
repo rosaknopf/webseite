@@ -1,4 +1,3 @@
-```json
 {
   "title": "Der Rosa Knopf",
   "description": "Handgemachte Unikate mit Herz",
@@ -6,11 +5,11 @@
   "language": "de",
   "holidayMode": {
     "enabled": false,
-    "message": "Wir sind im Urlaub! Der Shop ist pausiert, aber schauen Sie sich gerne um."
+    "message": "Wir sind bis zum 25.08. im Urlaub! Bestellungen sind pausiert."
   },
   "announcement": {
     "enabled": false,
-    "message": "Nur noch 2 Plätze im Strickkurs verfügbar!"
+    "message": ""
   },
   "social": {
     "instagram": "https://www.instagram.com/linh_schneiderei",
