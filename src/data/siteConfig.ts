@@ -28,7 +28,7 @@ export const siteConfig: SiteConfig = {
   },
   navigation: [
     { name: "Home", href: "/" },
-    { name: "Katalog", href: "/products" },
+    { name: "Shop", href: "/products" },
     { name: "Projekte", href: "/projects" },
     { name: "Kurse", href: "/courses" },
     { name: "Blog", href: "/blog" },
