@@ -9,12 +9,14 @@ interface Props {
     pubDate: Date;
     updatedDate?: Date;
     heroImage?: any;
+    image?: string;
 }
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, image } =
+    Astro.props;
 ---
 
-<Layout title={title} description={description} image={heroImage?.src}>
+<Layout title={title} description={description} image={image || heroImage?.src}>
     <article class="max-w-3xl mx-auto px-4 py-12">
         <div class="mb-8 text-center">
             {

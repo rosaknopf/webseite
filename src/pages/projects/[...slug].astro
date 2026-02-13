@@ -1,5 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
+import { getImage } from "astro:assets";
 import PostLayout from "../../layouts/PostLayout.astro";
 
 export async function getStaticPaths() {
@@ -13,8 +14,24 @@ type Props = CollectionEntry<"projects">;
 
 const project = Astro.props;
 const { Content } = await project.render();
+
+let ogImage = undefined;
+if (project.data.heroImage) {
+    const optimizedBg = await getImage({
+        src: project.data.heroImage,
+        format: "jpg",
+        width: 1200,
+        height: 630,
+        fit: "cover",
+    });
+    ogImage = optimizedBg.src;
+}
 ---
 
-<PostLayout {...project.data}>
+<PostLayout
+    {...project.data}
+    heroImage={project.data.heroImage}
+    image={ogImage}
+>
     <Content />
 </PostLayout>

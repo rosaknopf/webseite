@@ -1,5 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
+import { getImage } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 import { siteConfig } from "../../data/siteConfig";
 
@@ -23,12 +24,24 @@ const courseDate = new Date(course.data.date).toLocaleDateString("de-DE", {
     hour: "2-digit",
     minute: "2-digit",
 });
+
+let ogImage = "/og-image.png";
+if (course.data.heroImage) {
+    const optimizedBg = await getImage({
+        src: course.data.heroImage,
+        format: "jpg",
+        width: 1200,
+        height: 630,
+        fit: "cover",
+    });
+    ogImage = optimizedBg.src;
+}
 ---
 
 <Layout
     title={`${course.data.title} | Kurs`}
     description={course.data.description}
-    image={course.data.heroImage?.src}
+    image={ogImage}
 >
     <article class="max-w-4xl mx-auto px-4 py-12">
         <div class="grid md:grid-cols-3 gap-8 mb-12">
