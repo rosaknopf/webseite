@@ -1,20 +1,19 @@
 ---
-title: "Über Uns"
-mainHeading: "Die Geschichte hinter dem Knopf"
-quote: "\"Kreativität ist Intelligenz, die Spaß hat.\" – Albert Einstein"
-heroImage: "../../assets/uploads/seamstress.jpg"
+title: Über Uns
+mainHeading: Die Geschichte hinter dem Knopf
+quote: '"Kreativität ist Intelligenz, die Spaß hat." – Albert Einstein'
+heroImage: ../../assets/uploads/seamstress2.jpg
 ---
+Hallo! Ich bin Sabine, das Herz und die Hand hinter **Der Rosa Knopf**.
 
-Hallo! Ich bin Sascha (oder der Name der Inhaberin), das Herz und die Hand hinter **Der Rosa Knopf**.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent volutpat convallis eros, id imperdiet mauris egestas eget. Vestibulum mollis eleifend elementum. Mauris arcu dui, consequat eget maximus non, pellentesque nec metus. 
 
-Alles begann mit einer einfachen Idee: Dinge zu schaffen, die nicht nur schön aussehen, sondern sich auch gut anfühlen. Was als kleines Hobby an Wochenenden startete, wuchs schnell zu einer Leidenschaft heran, die ich heute mit Ihnen teilen darf.
+Quisque bibendum, felis vulputate laoreet posuere, tortor odio viverra leo, non rutrum quam augue et velit. Nulla fermentum risus magna, quis rhoncus dolor ornare ut. 
 
-In meiner kleinen Werkstatt entstehen Unikate, die Geschichten erzählen. Jedes Material wird sorgfältig ausgewählt, jeder Schnitt und jeder Stich (oder Pinselstrich) ist bewusst gesetzt.
+## In in ligula a tortor varius feugiat. 
 
-### Warum "Der Rosa Knopf"?
+Suspendisse rhoncus massa erat, vel aliquet orci aliquet vel. Maecenas eu urna et massa pulvinar molestie vel id leo. Vestibulum euismod porta massa, sed ultricies velit egestas sed. Donec id leo vitae velit tempus accumsan non vulputate libero. 
 
-Der Name steht für das kleine Detail, das den Unterschied macht. Ein rosa Knopf mag unscheinbar wirken, aber an der richtigen Stelle bringt er Farbe und Freude in den Alltag. Genau das möchte ich mit meinen Produkten erreichen.
+## Nam tempor aliquam rhoncus. 
 
-## Lust auf mehr?
-
-Stöbern Sie durch meine aktuellen Projekte oder besuchen Sie einen meiner Workshops.
+Nulla in sem sed sem luctus rutrum. Nam tellus tellus, molestie non sem sed, sagittis scelerisque nunc. Fusce porttitor, massa eu euismod ultricies, tellus nunc commodo magna, in vehicula ligula erat eget neque.
