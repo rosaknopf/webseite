@@ -19,6 +19,8 @@ const { hero, features, intro } = homeEntry.data;
 				src={hero.image}
 				alt="Hero Background"
 				class="w-full h-full object-cover"
+				width={1600}
+				densities={[1, 2]}
 			/>
 		</div>
 
@@ -58,6 +60,8 @@ const { hero, features, intro } = homeEntry.data;
 								src={cat.image}
 								alt={cat.title}
 								class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+								width={600}
+								densities={[1.5, 2]}
 							/>
 						</div>
 						<div class="absolute inset-0 bg-gradient-to-t from-rose-950/70 to-transparent flex items-end p-6">
@@ -96,6 +100,8 @@ const { hero, features, intro } = homeEntry.data;
 				src={intro.image}
 				alt="About Us"
 				class="w-full h-full object-cover"
+				width={800}
+				densities={[1.5, 2]}
 			/>
 		</div>
 	</section>

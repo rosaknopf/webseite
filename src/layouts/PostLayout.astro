@@ -23,6 +23,8 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
                         src={heroImage}
                         alt={title}
                         class="w-full aspect-video object-cover rounded-2xl shadow-md mb-8"
+                        width={1024}
+                        densities={[1.5, 2]}
                     />
                 )
             }

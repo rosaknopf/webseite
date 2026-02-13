@@ -35,6 +35,8 @@ const { Content } = await product.render();
                                 src={product.data.heroImage}
                                 alt={product.data.title}
                                 class="w-full h-full object-cover"
+                                width={1024}
+                                densities={[1.5, 2]}
                             />
                         ) : (
                             <div class="w-full h-full flex items-center justify-center text-rose-200">

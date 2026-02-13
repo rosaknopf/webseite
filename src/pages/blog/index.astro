@@ -1,10 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
 import { siteConfig } from "../../data/siteConfig";
 
-const posts = (await getCollection("blog"))
+const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
     .filter((post) => !post.data.draft)
     .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
@@ -37,6 +37,8 @@ const posts = (await getCollection("blog"))
                                     src={post.data.heroImage}
                                     alt={post.data.title}
                                     class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+                                    width={720}
+                                    densities={[1.5, 2]}
                                 />
                             ) : (
                                 <div class="w-full h-full flex items-center justify-center text-rose-300 bg-rose-50">
