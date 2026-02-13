@@ -3,6 +3,7 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import { Image, getImage } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 import BuyButton from "../../components/BuyButton.astro";
+import { siteConfig } from "../../data/siteConfig";
 
 export async function getStaticPaths() {
     const products = await getCollection("products");
@@ -16,25 +17,21 @@ type Props = CollectionEntry<"products">;
 const product = Astro.props;
 const { Content } = await product.render();
 
-let ogImage = "/og-image.png";
-if (product.data.heroImage) {
-    const optimizedBg = await getImage({
-        src: product.data.heroImage,
-        format: "jpg",
-        width: 1200,
-        height: 630,
-        fit: "cover",
-    });
-    ogImage = optimizedBg.src;
-}
+// Use dynamic OG image with Price & CTA
+const ogImage = new URL(
+    `/og/products/${product.slug}.png`,
+    siteConfig.siteUrl,
+).toString();
+
+// Keep heroImage jpg generaton? No, we use the dynamic one now.
 ---
 
 <Layout
     title={`${product.data.title} | Shop`}
     description={product.data.description}
     image={ogImage}
-    imageWidth={ogImage !== "/og-image.png" ? 1200 : undefined}
-    imageHeight={ogImage !== "/og-image.png" ? 630 : undefined}
+    imageWidth={1200}
+    imageHeight={630}
 >
     <div class="max-w-6xl mx-auto px-4 py-12">
         <div class="grid md:grid-cols-2 gap-12">
