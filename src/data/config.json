@@ -1,6 +1,8 @@
+```json
 {
   "title": "Der Rosa Knopf",
-  "description": "Handgemachte Unikate & Kurse",
+  "description": "Handgemachte Unikate mit Herz",
+  "siteUrl": "https://der-rosa-knopf.netlify.app",
   "language": "de",
   "holidayMode": {
     "enabled": false,

@@ -14,8 +14,9 @@ collections:
         label: "Globale Konfiguration"
         file: "src/data/config.json"
         fields:
-          - {label: "Seitentitel", name: "title", widget: "string"}
+          - {label: "Titel", name: "title", widget: "string"}
           - {label: "Beschreibung", name: "description", widget: "string"}
+          - {label: "Webseiten-URL", name: "siteUrl", widget: "string", hint: "z.B. https://der-rosa-knopf.netlify.app (Ohne Slash am Ende). Wichtig für Social Media Bilder."}
           - {label: "Urlaubsmodus", name: "holidayMode", widget: "object", fields: [
               {label: "Aktiviert", name: "enabled", widget: "boolean", default: false},
               {label: "Nachricht", name: "message", widget: "string", default: "Wir sind im Urlaub!"}
@@ -95,7 +96,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Titel", name: "title", widget: "string"}
-      - {label: "Beschreibung", name: "description", widget: "text"}
+      - {label: "Beschreibung", name: "description", widget: "text", hint: "Wichtig für Google & Social Media (wird beim Teilen angezeigt)."}
       - {label: "Preis (€)", name: "price", widget: "number", value_type: "float"}
       - {label: "Vorschaubild", name: "heroImage", widget: "image"}
       - {label: "Stripe Payment Link", name: "stripeLink", widget: "string", required: false}
@@ -111,7 +112,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Titel", name: "title", widget: "string"}
-      - {label: "Kurzbeschreibung", name: "description", widget: "string"}
+      - {label: "Kurzbeschreibung", name: "description", widget: "string", hint: "Teaser für die Übersicht und Social Media."}
       - {label: "Datum", name: "pubDate", widget: "datetime"}
       - {label: "Bild", name: "heroImage", widget: "image", required: false}
       - {label: "Entwurf?", name: "draft", widget: "boolean", default: false}
@@ -125,7 +126,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Titel", name: "title", widget: "string"}
-      - {label: "Beschreibung", name: "description", widget: "text"}
+      - {label: "Beschreibung", name: "description", widget: "text", hint: "Wichtig für Google & Social Media (wird beim Teilen angezeigt)."}
       - {label: "Datum", name: "pubDate", widget: "datetime"}
       - {label: "Bild", name: "heroImage", widget: "image"}
       - {label: "Status", name: "status", widget: "select", options: ["Completed", "In Progress"], default: "Completed"}
@@ -139,7 +140,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Titel", name: "title", widget: "string"}
-      - {label: "Beschreibung", name: "description", widget: "text"}
+      - {label: "Beschreibung", name: "description", widget: "text", hint: "Wichtig für Google & Social Media (wird beim Teilen angezeigt)."}
       - {label: "Datum & Uhrzeit", name: "date", widget: "datetime"}
       - {label: "Preis (€)", name: "price", widget: "number", required: false}
       - {label: "Dauer", name: "duration", widget: "string", required: false}

@@ -21,7 +21,7 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   ...configData,
-  siteUrl: "https://der-rosa-knopf.de",
+  siteUrl: configData.siteUrl || "https://der-rosa-knopf.de",
   announcement: { // Added announcement property
     enabled: false, // Default value, adjust as needed
     message: "", // Default value, adjust as needed
