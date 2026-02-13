@@ -15,7 +15,7 @@ type Props = CollectionEntry<"projects">;
 const project = Astro.props;
 const { Content } = await project.render();
 
-let ogImage = undefined;
+let ogImage: string | undefined = undefined;
 if (project.data.heroImage) {
     const optimizedBg = await getImage({
         src: project.data.heroImage,
@@ -32,6 +32,8 @@ if (project.data.heroImage) {
     {...project.data}
     heroImage={project.data.heroImage}
     image={ogImage}
+    imageWidth={ogImage ? 1200 : undefined}
+    imageHeight={ogImage ? 630 : undefined}
 >
     <Content />
 </PostLayout>

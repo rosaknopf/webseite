@@ -42,6 +42,8 @@ if (course.data.heroImage) {
     title={`${course.data.title} | Kurs`}
     description={course.data.description}
     image={ogImage}
+    imageWidth={ogImage !== "/og-image.png" ? 1200 : undefined}
+    imageHeight={ogImage !== "/og-image.png" ? 630 : undefined}
 >
     <article class="max-w-4xl mx-auto px-4 py-12">
         <div class="grid md:grid-cols-3 gap-8 mb-12">
