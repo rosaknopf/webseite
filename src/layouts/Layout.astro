@@ -49,6 +49,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		class="bg-rose-50 text-brand-text min-h-screen flex flex-col font-sans"
 	>
 		{
+			siteConfig.announcement?.enabled && (
+				<div class="bg-rose-100 text-rose-900 px-4 py-2 text-center text-sm font-medium border-b border-rose-200">
+					{siteConfig.announcement.message}
+				</div>
+			)
+		}
+		{
 			siteConfig.holidayMode.enabled && (
 				<div class="bg-rose-900 text-white text-center py-2 px-4 shadow sticky top-0 z-50">
 					<p class="text-sm font-medium">

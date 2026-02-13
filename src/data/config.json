@@ -6,6 +6,10 @@
     "enabled": false,
     "message": "Wir sind im Urlaub! Der Shop ist pausiert, aber schauen Sie sich gerne um."
   },
+  "announcement": {
+    "enabled": false,
+    "message": "Nur noch 2 Plätze im Strickkurs verfügbar!"
+  },
   "social": {
     "instagram": "https://www.instagram.com/linh_schneiderei",
     "email": "kontakt@derrosaknopf.de",
