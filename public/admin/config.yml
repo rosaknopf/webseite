@@ -19,11 +19,11 @@ collections:
           - {label: "Webseiten-URL", name: "siteUrl", widget: "string", hint: "z.B. https://der-rosa-knopf.netlify.app (Ohne Slash am Ende). Wichtig für Social Media Bilder."}
           - {label: "Urlaubsmodus", name: "holidayMode", widget: "object", fields: [
               {label: "Aktiviert", name: "enabled", widget: "boolean", default: false},
-              {label: "Nachricht", name: "message", widget: "string", default: "Wir sind im Urlaub!"}
+              {label: "Nachricht", name: "message", widget: "string", default: "Wir sind im Urlaub!", required: false}
             ]}
           - {label: "Ankündigungs-Banner", name: "announcement", widget: "object", fields: [
               {label: "Aktiviert", name: "enabled", widget: "boolean", default: false},
-              {label: "Nachricht", name: "message", widget: "string", default: "Wichtige Info hier eintragen"}
+              {label: "Nachricht", name: "message", widget: "string", default: "Wichtige Info hier eintragen", required: false}
             ]}
           - {label: "Social Media", name: "social", widget: "object", fields: [
               {label: "Instagram", name: "instagram", widget: "string"},
