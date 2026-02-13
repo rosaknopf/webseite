@@ -30,50 +30,62 @@ collections:
               {label: "Telefon", name: "phone", widget: "string"}
             ]}
 
-  # Pages (Home, etc.)
+  # Pages (Files)
   - name: "pages"
-    label: "Seiten"
-    folder: "src/content/pages"
+    label: "Seiten Layouts"
+    files:
+      - name: "home"
+        label: "Startseite"
+        file: "src/content/pages/home.md"
+        fields:
+          - {label: "Titel (Intern)", name: "title", widget: "string", default: "Startseite"}
+          - label: "Hero Bereich (Oben)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Überschrift", name: "title", widget: "string"}
+              - {label: "Untertitel", name: "subtitle", widget: "text"}
+              - {label: "Hintergrundbild", name: "image", widget: "image"}
+              - {label: "Button Text", name: "buttonText", widget: "string"}
+              - {label: "Button Link", name: "buttonLink", widget: "string"}
+          - label: "Kategorien (Mitte)"
+            name: "features"
+            widget: "list"
+            fields:
+              - {label: "Titel", name: "title", widget: "string"}
+              - {label: "Link", name: "link", widget: "string"}
+              - {label: "Bild", name: "image", widget: "image"}
+          - label: "Über Uns Teaser (Unten)"
+            name: "intro"
+            widget: "object"
+            fields:
+              - {label: "Titel", name: "title", widget: "string"}
+              - {label: "Text", name: "text", widget: "text"}
+              - {label: "Bild", name: "image", widget: "image"}
+              - {label: "Link Text", name: "linkText", widget: "string"}
+              - {label: "Link URL", name: "linkUrl", widget: "string"}
+          - label: "Instagram Galerie (Unten)"
+            name: "instagram"
+            widget: "object"
+            fields:
+              - {label: "Anzeigen?", name: "enabled", widget: "boolean", default: true}
+              - {label: "Überschrift", name: "title", widget: "string", default: "Folgen Sie uns auf Instagram"}
+              - label: "Bilder"
+                name: "images"
+                widget: "list"
+                fields:
+                  - {label: "Bild", name: "image", widget: "image"}
+                  - {label: "Link zum Post", name: "link", widget: "string", required: false}
+
+  # Legal Texts
+  - name: "legal"
+    label: "Rechtstexte"
+    folder: "src/content/legal"
     create: false
     slug: "{{slug}}"
     fields:
-      - label: "Hero Bereich (Oben)"
-        name: "hero"
-        widget: "object"
-        fields:
-          - {label: "Überschrift", name: "title", widget: "string"}
-          - {label: "Untertitel", name: "subtitle", widget: "text"}
-          - {label: "Hintergrundbild", name: "image", widget: "image"}
-          - {label: "Button Text", name: "buttonText", widget: "string"}
-          - {label: "Button Link", name: "buttonLink", widget: "string"}
-      - label: "Kategorien (Mitte)"
-        name: "features"
-        widget: "list"
-        fields:
-          - {label: "Titel", name: "title", widget: "string"}
-          - {label: "Link", name: "link", widget: "string"}
-          - {label: "Bild", name: "image", widget: "image"}
-      - label: "Über Uns Teaser (Unten)"
-        name: "intro"
-        widget: "object"
-        fields:
-          - {label: "Titel", name: "title", widget: "string"}
-          - {label: "Text", name: "text", widget: "text"}
-          - {label: "Bild", name: "image", widget: "image"}
-          - {label: "Link Text", name: "linkText", widget: "string"}
-          - {label: "Link URL", name: "linkUrl", widget: "string"}
-      - label: "Instagram Galerie (Unten)"
-        name: "instagram"
-        widget: "object"
-        fields:
-          - {label: "Anzeigen?", name: "enabled", widget: "boolean", default: true}
-          - {label: "Überschrift", name: "title", widget: "string", default: "Folgen Sie uns auf Instagram"}
-          - label: "Bilder"
-            name: "images"
-            widget: "list"
-            fields:
-              - {label: "Bild", name: "image", widget: "image"}
-              - {label: "Link zum Post", name: "link", widget: "string", required: false}
+      - {label: "Titel", name: "title", widget: "string"}
+      - {label: "Inhalt", name: "body", widget: "markdown"}
 
   # Shop Products
   - name: "products"

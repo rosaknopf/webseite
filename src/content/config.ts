@@ -78,5 +78,12 @@ const pages = defineCollection({
     }),
 });
 
-export const collections = { blog, projects, products, courses, pages };
+const legal = defineCollection({
+    schema: z.object({
+        title: z.string(),
+        updatedDate: z.coerce.date().optional(),
+    }),
+});
+
+export const collections = { blog, projects, products, courses, pages, legal };
 

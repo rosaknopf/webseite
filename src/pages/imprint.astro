@@ -1,64 +1,23 @@
 ---
+import { getEntry } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import { siteConfig } from "../data/siteConfig";
+
+const entry = await getEntry("legal", "imprint");
+const { Content } = await entry.render();
 ---
 
 <Layout
-    title={`Impressum | ${siteConfig.title}`}
+    title={`${entry.data.title} | ${siteConfig.title}`}
     description="Rechtliche Informationen"
 >
     <div class="max-w-3xl mx-auto py-12 px-4">
         <h1 class="text-3xl md:text-4xl font-serif text-rose-950 mb-8">
-            Impressum
+            {entry.data.title}
         </h1>
 
-        <div class="prose prose-rose text-rose-900/90">
-            <h2>Angaben gemäß § 5 TMG</h2>
-            <p>
-                Max Mustermann<br />
-                Musterstraße 1<br />
-                12345 Musterstadt
-            </p>
-
-            <h2>Kontakt</h2>
-            <p>
-                Telefon: {siteConfig.social.phone}<br />
-                E-Mail: {siteConfig.social.email}
-            </p>
-
-            <h2>Umsatzsteuer-ID</h2>
-            <p>
-                Umsatzsteuer-Identifikationsnummer gemäß § 27 a
-                Umsatzsteuergesetz:<br />
-                DE999999999
-            </p>
-
-            <h2>Redaktionell verantwortlich</h2>
-            <p>
-                Max Mustermann<br />
-                Musterstraße 1<br />
-                12345 Musterstadt
-            </p>
-
-            <h2>EU-Streitschlichtung</h2>
-            <p>
-                Die Europäische Kommission stellt eine Plattform zur
-                Online-Streitbeilegung (OS) bereit:
-                <a
-                    href="https://ec.europa.eu/consumers/odr/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >https://ec.europa.eu/consumers/odr/</a
-                >.<br />
-                Unsere E-Mail-Adresse finden Sie oben im Impressum.
-            </p>
-
-            <h2>Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
-            <p>
-                Wir sind nicht bereit oder verpflichtet, an
-                Streitbeilegungsverfahren vor einer
-                Verbraucherschlichtungsstelle teilzunehmen.
-            </p>
+        <div class="prose prose-rose text-rose-900/90 max-w-none">
+            <Content />
         </div>
     </div>
 </Layout>

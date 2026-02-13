@@ -1,4 +1,5 @@
 ---
+title: "Startseite"
 hero:
   title: "Handgemacht & Einzigartig"
   subtitle: "Entdecken Sie liebevoll gestaltete Unikate, inspirierende Projekte und kreative Workshops."
