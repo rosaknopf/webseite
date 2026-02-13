@@ -36,37 +36,96 @@ const ogImage = new URL(
     <div class="max-w-6xl mx-auto px-4 py-12">
         <div class="grid md:grid-cols-2 gap-12">
             <!-- Product Image(s) -->
+            <!-- Product Image(s) -->
             <div class="space-y-4">
-                <div
-                    class="aspect-square bg-rose-50 rounded-3xl overflow-hidden border border-rose-100 relative"
-                >
+                <div class="pswp-gallery" id="my-gallery">
+                    <div
+                        class="aspect-square bg-rose-50 rounded-3xl overflow-hidden border border-rose-100 relative group cursor-pointer"
+                    >
+                        {
+                            product.data.heroImage ? (
+                                <a
+                                    href={product.data.heroImage.src}
+                                    data-pswp-width={
+                                        product.data.heroImage.width
+                                    }
+                                    data-pswp-height={
+                                        product.data.heroImage.height
+                                    }
+                                    target="_blank"
+                                    class="block w-full h-full"
+                                >
+                                    <Image
+                                        src={product.data.heroImage}
+                                        alt={product.data.title}
+                                        class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                                        width={1024}
+                                        densities={[1.5, 2]}
+                                    />
+                                </a>
+                            ) : (
+                                <div class="w-full h-full flex items-center justify-center text-rose-200">
+                                    <span class="text-8xl">🧶</span>
+                                </div>
+                            )
+                        }
+                        {
+                            product.data.isSoldOut && (
+                                <div class="absolute inset-0 bg-white/30 backdrop-blur-sm flex items-center justify-center z-10 pointer-events-none">
+                                    <span class="bg-rose-900 text-white px-6 py-3 font-bold uppercase tracking-widest text-xl rounded-full transform -rotate-12 shadow-2xl border-4 border-white">
+                                        Verkauft
+                                    </span>
+                                </div>
+                            )
+                        }
+                    </div>
+
+                    {/* Additional Gallery Images */}
                     {
-                        product.data.heroImage ? (
-                            <Image
-                                src={product.data.heroImage}
-                                alt={product.data.title}
-                                class="w-full h-full object-cover"
-                                width={1024}
-                                densities={[1.5, 2]}
-                            />
-                        ) : (
-                            <div class="w-full h-full flex items-center justify-center text-rose-200">
-                                <span class="text-8xl">🧶</span>
-                            </div>
-                        )
-                    }
-                    {
-                        product.data.isSoldOut && (
-                            <div class="absolute inset-0 bg-white/30 backdrop-blur-sm flex items-center justify-center z-10">
-                                <span class="bg-rose-900 text-white px-6 py-3 font-bold uppercase tracking-widest text-xl rounded-full transform -rotate-12 shadow-2xl border-4 border-white">
-                                    Verkauft
-                                </span>
-                            </div>
-                        )
+                        product.data.gallery &&
+                            product.data.gallery.length > 0 && (
+                                <div class="grid grid-cols-4 gap-4 mt-4">
+                                    {product.data.gallery.map((item, index) => (
+                                        <a
+                                            href={item.image.src}
+                                            data-pswp-width={item.image.width}
+                                            data-pswp-height={item.image.height}
+                                            target="_blank"
+                                            class="aspect-square rounded-xl overflow-hidden border border-rose-100 block hover:opacity-90 transition"
+                                        >
+                                            <Image
+                                                src={item.image}
+                                                alt={`Galeriebild ${index + 1}`}
+                                                Fallback
+                                                alt
+                                                class="w-full h-full object-cover"
+                                                width={300}
+                                                height={300}
+                                            />
+                                        </a>
+                                    ))}
+                                </div>
+                            )
                     }
                 </div>
-                <!-- Future: Additional images thumbnail grid here -->
             </div>
+
+            <link
+                rel="stylesheet"
+                href="https://unpkg.com/photoswipe@5.4.3/dist/photoswipe.css"
+            />
+
+            <script>
+                import PhotoSwipeLightbox from "photoswipe/lightbox";
+                import "photoswipe/style.css";
+
+                const lightbox = new PhotoSwipeLightbox({
+                    gallery: "#my-gallery",
+                    children: "a",
+                    pswpModule: () => import("photoswipe"),
+                });
+                lightbox.init();
+            </script>
 
             <!-- Product Info -->
             <div class="flex flex-col">

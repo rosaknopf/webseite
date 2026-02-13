@@ -27,6 +27,9 @@ const products = defineCollection({
         description: z.string(),
         price: z.number(), // Price in EUR
         heroImage: image().optional(),
+        gallery: z.array(z.object({
+            image: image(),
+        })).optional(),
         stripeLink: z.string().optional(), // Payment Link URL
         isSoldOut: z.boolean().default(false),
         isUnique: z.boolean().default(true), // 1-of-1 item

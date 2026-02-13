@@ -99,6 +99,12 @@ collections:
       - {label: "Beschreibung", name: "description", widget: "text", hint: "Wichtig für Google & Social Media (wird beim Teilen angezeigt)."}
       - {label: "Preis (€)", name: "price", widget: "number", value_type: "float"}
       - {label: "Vorschaubild", name: "heroImage", widget: "image"}
+      - label: "Bildergalerie"
+        name: "gallery"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Bild", name: "image", widget: "image"}
       - {label: "Stripe Payment Link", name: "stripeLink", widget: "string", required: false}
       - {label: "Ist Unikat?", name: "isUnique", widget: "boolean", default: true}
       - {label: "Ist Verkauft?", name: "isSoldOut", widget: "boolean", default: false}

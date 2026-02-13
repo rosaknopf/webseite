@@ -32,28 +32,26 @@ export const GET: APIRoute = async ({ props }) => {
 
     // Load Image
     let imageBuffer: Buffer | null = null;
-    if (product.data.heroImage) {
-        // Resolve path. heroImage is relative to src/content/products/
-        // e.g. "../../assets/uploads/image.jpg"
-        // We need to resolve to src/assets/uploads/image.jpg
-        // Simplest way: replace ../.. with src
-        // Or cleaner: construct path
-        const imagePathStr = product.data.heroImage as unknown as string; // It's a string in frontmatter
-        // Note: Astro content collections might treat image as an object if defined as image() in schema.
-        // In config.yml it is "image" widget. In config.ts it is "image()".
-        // If it's image(), product.data.heroImage is an object { src: ..., width: ..., etc } in the .astro file,
-        // but here in .ts endpoint, is it processed?
-        // With schema image(), it returns an object with fsPath usually?
-        // Let's assume it provides enough info. Use console.log during build if needed.
-        // Actually, for getCollection in .ts, image() helper returns an object with `fsPath`!
 
-        // Let's try to access fsPath if available, or fall back to resolving string.
-        const heroImage: any = product.data.heroImage;
-        const potentialPath = heroImage?.fsPath;
-
-        if (potentialPath && fs.existsSync(potentialPath)) {
-            imageBuffer = fs.readFileSync(potentialPath);
+    // Strategy: Read the raw markdown file to get the relative path of the image
+    // This avoids issues with Astro's image() schema transformation in this context
+    try {
+        const productFilePath = path.join(process.cwd(), "src/content/products", `${product.id}`); // product.id includes extension e.g. "scarf.md"
+        if (fs.existsSync(productFilePath)) {
+            const fileContent = fs.readFileSync(productFilePath, "utf-8");
+            // Simple regex to find heroImage: ...
+            const match = fileContent.match(/heroImage:\s*["']?([^"'\n]+)["']?/);
+            if (match && match[1]) {
+                const relativePath = match[1]; // e.g. "../../assets/uploads/image.jpg"
+                // Resolve relative to src/content/products/
+                const absolutePath = path.resolve(path.dirname(productFilePath), relativePath);
+                if (fs.existsSync(absolutePath)) {
+                    imageBuffer = fs.readFileSync(absolutePath);
+                }
+            }
         }
+    } catch (e) {
+        console.error("Error loading OG image:", e);
     }
 
     const imageBase64 = imageBuffer ? `data:image/jpeg;base64,${imageBuffer.toString("base64")}` : "";
