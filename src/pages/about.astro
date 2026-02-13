@@ -1,62 +1,59 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { siteConfig } from "../data/siteConfig";
+import { getEntry } from "astro:content";
+import { Image } from "astro:assets";
+
+const aboutPage = await getEntry("pages", "about");
+
+if (!aboutPage) {
+    throw new Error("About page content not found");
+}
+
+const { Content } = await aboutPage.render();
+const { title, mainHeading, quote, heroImage } = aboutPage.data;
 ---
 
 <Layout
-    title={`Über Uns | ${siteConfig.title}`}
+    title={`${title} | ${siteConfig.title}`}
     description={`Die Geschichte hinter ${siteConfig.title}`}
 >
     <div class="max-w-4xl mx-auto py-12 px-4">
         <div class="text-center mb-16">
             <h1 class="text-4xl md:text-5xl font-serif text-rose-950 mb-6">
-                Die Geschichte hinter dem Knopf
+                {mainHeading}
             </h1>
-            <p
-                class="text-xl text-rose-800/80 font-light italic max-w-2xl mx-auto"
-            >
-                "Kreativität ist Intelligenz, die Spaß hat." – Albert Einstein
-            </p>
+            {
+                quote && (
+                    <p class="text-xl text-rose-800/80 font-light italic max-w-2xl mx-auto">
+                        {quote}
+                    </p>
+                )
+            }
         </div>
 
         <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
             <div
                 class="aspect-[4/5] bg-rose-100 rounded-2xl overflow-hidden shadow-md rotate-2 transform hover:rotate-0 transition duration-500"
             >
-                <img
-                    src="https://placehold.co/800x1000/fff1f2/be123c?text=Portrait"
-                    alt="Portrait"
-                    class="w-full h-full object-cover"
-                />
+                {
+                    heroImage ? (
+                        <Image
+                            src={heroImage}
+                            alt="Portrait"
+                            class="w-full h-full object-cover"
+                            width={800}
+                            height={1000}
+                        />
+                    ) : (
+                        <div class="w-full h-full flex items-center justify-center text-rose-300">
+                            Kein Bild
+                        </div>
+                    )
+                }
             </div>
             <div class="prose prose-rose prose-lg text-rose-900/90 font-sans">
-                <p>
-                    Hallo! Ich bin Sascha (oder der Name der Inhaberin), das
-                    Herz und die Hand hinter <strong>{siteConfig.title}</strong
-                    >.
-                </p>
-                <p>
-                    Alles begann mit einer einfachen Idee: Dinge zu schaffen,
-                    die nicht nur schön aussehen, sondern sich auch gut
-                    anfühlen. Was als kleines Hobby an Wochenenden startete,
-                    wuchs schnell zu einer Leidenschaft heran, die ich heute mit
-                    Ihnen teilen darf.
-                </p>
-                <p>
-                    In meiner kleinen Werkstatt entstehen Unikate, die
-                    Geschichten erzählen. Jedes Material wird sorgfältig
-                    ausgewählt, jeder Schnitt und jeder Stich (oder
-                    Pinselstrich) ist bewusst gesetzt.
-                </p>
-                <h3 class="font-serif text-rose-950">
-                    Warum "Der Rosa Knopf"?
-                </h3>
-                <p>
-                    Der Name steht für das kleine Detail, das den Unterschied
-                    macht. Ein rosa Knopf mag unscheinbar wirken, aber an der
-                    richtigen Stelle bringt er Farbe und Freude in den Alltag.
-                    Genau das möchte ich mit meinen Produkten erreichen.
-                </p>
+                <Content />
             </div>
         </div>
 

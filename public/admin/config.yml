@@ -78,6 +78,16 @@ collections:
                   - {label: "Bild", name: "image", widget: "image"}
                   - {label: "Link zum Post", name: "link", widget: "string", required: false}
 
+      - name: "about"
+        label: "Über Uns"
+        file: "src/content/pages/about.md"
+        fields:
+          - {label: "Titel (Intern)", name: "title", widget: "string", default: "Über Uns"}
+          - {label: "Haupt-Überschrift", name: "mainHeading", widget: "string", default: "Die Geschichte hinter dem Knopf"}
+          - {label: "Zitat", name: "quote", widget: "string"}
+          - {label: "Portrait Bild", name: "heroImage", widget: "image"}
+          - {label: "Inhalt", name: "body", widget: "markdown"}
+
   # Legal Texts
   - name: "legal"
     label: "Rechtstexte"

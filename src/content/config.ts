@@ -51,25 +51,26 @@ const courses = defineCollection({
 
 const pages = defineCollection({
     schema: ({ image }) => z.object({
+        // Home Page Specific
         hero: z.object({
             title: z.string(),
             subtitle: z.string(),
             image: image(),
             buttonText: z.string(),
             buttonLink: z.string(),
-        }),
+        }).optional(),
         intro: z.object({
             title: z.string(),
             text: z.string(),
             image: image(),
             linkText: z.string(),
             linkUrl: z.string(),
-        }),
+        }).optional(),
         features: z.array(z.object({
             title: z.string(),
             link: z.string(),
             image: image(),
-        })),
+        })).optional(),
         instagram: z.object({
             enabled: z.boolean().default(true),
             title: z.string(),
@@ -78,6 +79,12 @@ const pages = defineCollection({
                 link: z.string().optional(),
             })),
         }).optional(),
+
+        // Generic / About Page
+        title: z.string(), // Meta Title or Internal
+        mainHeading: z.string().optional(), // Page H1
+        quote: z.string().optional(),
+        heroImage: image().optional(),
     }),
 });
 
