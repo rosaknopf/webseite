@@ -34,6 +34,7 @@ const products = defineCollection({
         isSoldOut: z.boolean().default(false),
         isUnique: z.boolean().default(true), // 1-of-1 item
         draft: z.boolean().default(false),
+        pubDate: z.coerce.date().default(new Date()),
     }),
 });
 

@@ -27,12 +27,34 @@ const products = (await getCollection("products")).sort((a, b) => {
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="flex justify-end mb-8 relative z-10">
+            <div class="relative inline-block text-left">
+                <select
+                    id="sort-select"
+                    class="block w-full pl-3 pr-10 py-2 text-base border-rose-200 focus:outline-none focus:ring-rose-500 focus:border-rose-500 sm:text-sm rounded-md text-rose-900 bg-white shadow-sm cursor-pointer"
+                >
+                    <option value="newest">Neuheiten</option>
+                    <option value="price-asc">Preis aufsteigend</option>
+                    <option value="price-desc">Preis absteigend</option>
+                </select>
+            </div>
+        </div>
+
+        <div
+            id="product-grid"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
             {
                 products.map((product) => (
                     <a
                         href={`/products/${product.slug}/`}
-                        class={`group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-rose-50 flex flex-col h-full ${product.data.isSoldOut ? "opacity-70 grayscale-[0.5]" : ""}`}
+                        class={`product-card group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-rose-50 flex flex-col h-full ${product.data.isSoldOut ? "opacity-70 grayscale-[0.5]" : ""}`}
+                        data-price={product.data.price}
+                        data-date={
+                            product.data.pubDate
+                                ? new Date(product.data.pubDate).getTime()
+                                : 0
+                        }
                     >
                         <div class="aspect-square overflow-hidden bg-rose-100 relative">
                             {product.data.heroImage ? (
@@ -89,4 +111,39 @@ const products = (await getCollection("products")).sort((a, b) => {
             }
         </div>
     </section>
+
+    <script>
+        const select = document.getElementById(
+            "sort-select",
+        ) as HTMLSelectElement;
+        const grid = document.getElementById("product-grid");
+
+        if (select && grid) {
+            select.addEventListener("change", () => {
+                const sortValue = select.value;
+                const products = Array.from(
+                    grid.children,
+                ) as HTMLAnchorElement[];
+
+                products.sort((a, b) => {
+                    const priceA = parseFloat(a.dataset.price || "0");
+                    const priceB = parseFloat(b.dataset.price || "0");
+                    const dateA = parseInt(a.dataset.date || "0");
+                    const dateB = parseInt(b.dataset.date || "0");
+
+                    if (sortValue === "price-asc") {
+                        return priceA - priceB;
+                    } else if (sortValue === "price-desc") {
+                        return priceB - priceA;
+                    } else if (sortValue === "newest") {
+                        return dateB - dateA;
+                    }
+                    return 0;
+                });
+
+                // Re-append in new order
+                products.forEach((product) => grid.appendChild(product));
+            });
+        }
+    </script>
 </Layout>
