@@ -20,9 +20,9 @@ features:
 intro:
   title: Über Der Rosa Knopf
   text: Wir sind eine kleine Manufaktur mit einer großen Leidenschaft für Details.
-    Jedes Stück in unserem Shop ist ein Unikat, gefertigt mit Sorgfalt und
-    Liebe.
-  image: ../../assets/uploads/seamstress2.jpg
+    Jedes Stück in unserem Shop ist ein Unikat, gefertigt mit Sorgfalt und Liebe
+    aus Nürnberg.
+  image: ../../assets/uploads/sabine_profile_v2.png
   linkText: Mehr erfahren
   linkUrl: /about
 instagram:
