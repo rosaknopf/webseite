@@ -45,3 +45,13 @@ Wenn Sie uns per E-Mail, Telefon oder Telefax kontaktieren, wird Ihre Anfrage in
 ### LocalStorage / SessionStorage
 
 Diese Website nutzt LocalStorage / SessionStorage Funktionalitäten, allerdings setzen wir keine Tracking-Cookies von Drittanbietern ein. Schriften (Fonts) werden lokal geladen.
+
+### Zahlungsabwicklung (Stripe)
+
+Auf unserer Website bieten wir die Bezahlung via Stripe an. Anbieter dieses Zahlungsdienstes ist die Stripe Payments Europe, Ltd., 1 Grand Canal Street Lower, Grand Canal Dock, Dublin, Irland.
+
+Wenn Sie die Bezahlung via Stripe wählen, werden die von Ihnen eingegebenen Zahlungsdaten an Stripe übermittelt. Die Übermittlung Ihrer Daten an Stripe erfolgt auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO (Einwilligung) und Art. 6 Abs. 1 lit. b DSGVO (Verarbeitung zur Erfüllung eines Vertrags).
+
+Wir selbst speichern keine Zahlungsdaten auf unseren Servern. Die gesamte Abwicklung findet über die sichere Infrastruktur von Stripe statt.
+
+Weitere Informationen zum Datenschutz bei Stripe finden Sie unter: [https://stripe.com/de/privacy](https://stripe.com/de/privacy).

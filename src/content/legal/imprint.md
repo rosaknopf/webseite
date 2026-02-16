@@ -5,25 +5,25 @@ updatedDate: 2023-10-27
 
 ## Angaben gemäß § 5 TMG
 
-Max Mustermann  
-Musterstraße 1  
-12345 Musterstadt
+Sabine Fröhlke Noberini
+An der Radrunde 164
+90455 Nürnberg
 
 ## Kontakt
 
-Telefon: +49 123 456789  
-E-Mail: kontakt@derrosaknopf.de
+Telefon: +49 1511 2233668
+E-Mail: saro.noberini@gmx.de
 
 ## Umsatzsteuer-ID
 
-Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:  
-DE999999999
+Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
+DE 342419718
 
 ## Redaktionell verantwortlich
 
-Max Mustermann  
-Musterstraße 1  
-12345 Musterstadt
+Sabine Fröhlke Noberini
+An der Radrunde 164
+90455 Nürnberg
 
 ## EU-Streitschlichtung
 
