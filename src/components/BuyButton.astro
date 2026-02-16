@@ -48,7 +48,10 @@ if (isSoldOut) {
                 rel="noopener noreferrer"
                 class="block w-full text-center bg-rose-600 hover:bg-rose-700 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1"
             >
-                {buttonText} — {price.toFixed(2)} €
+                {buttonText} —{" "}
+                <span class="whitespace-nowrap">
+                    {price % 1 === 0 ? price : price.toFixed(2)} €
+                </span>
                 {isUnique && (
                     <span class="block text-xs font-normal opacity-90 mt-1">
                         Unikat - Nur 1x verfügbar
