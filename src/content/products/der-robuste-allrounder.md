@@ -1,5 +1,5 @@
 ---
-title: Der robuste Allrounder
+title: Kulturbeutel „Jeans-Look“ – Handgefertigtes Raumwunder in Dunkelblau
 description: Ein treuer Begleiter für deine Reisen oder das Badezimmer. Dieser
   handgenähte Kulturbeutel besticht durch sein zeitloses Design in melierter
   Denim-Optik und bietet genügend Platz für alles, was du unterwegs brauchst.
