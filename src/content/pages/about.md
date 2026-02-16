@@ -1,19 +1,17 @@
 ---
-title: Über Uns
-mainHeading: Die Geschichte hinter dem Knopf
-quote: '"Kreativität ist Intelligenz, die Spaß hat." – Albert Einstein'
-heroImage: ../../assets/uploads/seamstress2.jpg
+title: Über Mich
+mainHeading: Sabine & Der Rosa Knopf
+quote: '"Ich zaubere kreative Dinge aus alten Sachen."'
+heroImage: ../../assets/uploads/sabine_profile_v2.png
 ---
-Hallo! Ich bin Sabine, das Herz und die Hand hinter **Der Rosa Knopf**.
+Hallo! Ich bin Sabine, das Herz und die kreative Hand hinter **Der Rosa Knopf**.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent volutpat convallis eros, id imperdiet mauris egestas eget. Vestibulum mollis eleifend elementum. Mauris arcu dui, consequat eget maximus non, pellentesque nec metus. 
+Ich lebe zusammen mit meinem Ehemann im schönen Nürnberg. Hauptberuflich bin ich als Dozentin tätig, doch meine wahre Leidenschaft blüht auf, wenn ich kreativ sein kann.
 
-Quisque bibendum, felis vulputate laoreet posuere, tortor odio viverra leo, non rutrum quam augue et velit. Nulla fermentum risus magna, quis rhoncus dolor ornare ut. 
+In meiner Werkstatt entstehen neue Einzelstücke aus alten Sachen – Upcycling ist für mich nicht nur ein Trend, sondern eine Herzensangelegenheit.
 
-## In in ligula a tortor varius feugiat. 
+### Erfahrung & Leidenschaft
 
-Suspendisse rhoncus massa erat, vel aliquet orci aliquet vel. Maecenas eu urna et massa pulvinar molestie vel id leo. Vestibulum euismod porta massa, sed ultricies velit egestas sed. Donec id leo vitae velit tempus accumsan non vulputate libero. 
+Handwerkliches Können ist die Basis meiner Arbeit. Ich blicke auf über **34 Jahre praktische Erfahrung auf Meisterniveau** zurück. Auch wenn ich heute nicht mehr offiziell bei der Handwerkskammer geführt werde, steckt in jedem meiner Stücke das Wissen, die Sorgfalt und der hohe Qualitätsanspruch, den ich über Jahrzehnte perfektioniert habe.
 
-## Nam tempor aliquam rhoncus. 
-
-Nulla in sem sed sem luctus rutrum. Nam tellus tellus, molestie non sem sed, sagittis scelerisque nunc. Fusce porttitor, massa eu euismod ultricies, tellus nunc commodo magna, in vehicula ligula erat eget neque.
+Mit **Der Rosa Knopf** lade ich Sie ein, diese Freude an Kreativität und Qualität zu teilen. Stöbern Sie durch meinen Shop oder lassen Sie sich inspirieren!
