@@ -14,23 +14,29 @@ export interface SiteConfig {
     message: string;
   };
   siteUrl: string;
-  navigation: { name: string; href: string; }[];
-  // Assuming social is also part of configData or will be added later
-  social?: any; // Placeholder, as the provided snippet was malformed here
+  navigation: { name: string; href: string }[];
+  features: {
+    blog: boolean;
+    shop: boolean;
+    projects: boolean;
+    courses: boolean;
+  };
 }
 
 export const siteConfig: SiteConfig = {
   ...configData,
   siteUrl: configData.siteUrl || "https://der-rosa-knopf.de",
-  announcement: { // Added announcement property
-    enabled: false, // Default value, adjust as needed
-    message: "", // Default value, adjust as needed
+  announcement: {
+    enabled: false,
+    message: "",
   },
   navigation: [
     { name: "Home", href: "/" },
-    { name: "Shop", href: "/products" },
-    { name: "Projekte", href: "/projects" },
-    { name: "Kurse", href: "/courses" },
-    { name: "Blog", href: "/blog" },
+    ...(configData.features?.shop ? [{ name: "Shop", href: "/products" }] : []),
+    ...(configData.features?.projects
+      ? [{ name: "Projekte", href: "/projects" }]
+      : []),
+    ...(configData.features?.courses ? [{ name: "Kurse", href: "/courses" }] : []),
+    ...(configData.features?.blog ? [{ name: "Blog", href: "/blog" }] : []),
   ],
 };

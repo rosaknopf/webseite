@@ -15,5 +15,11 @@
     "instagram": "https://www.instagram.com/derrosaknopf",
     "email": "saro.noberini@gmx.de",
     "phone": "+49 1511 2233668"
+  },
+  "features": {
+    "blog": true,
+    "shop": true,
+    "projects": true,
+    "courses": true
   }
 }
