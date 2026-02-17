@@ -29,6 +29,23 @@
   /* Fonts */
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
+
+  /* Design System Overrides: Flat Look */
+  --radius-xs: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  /* Keeping --radius-full intact for avatars/badges */
+
+  --shadow-xs: none;
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-xl: none;
+  --shadow-2xl: none;
 }
 
 /* Base Styles */
