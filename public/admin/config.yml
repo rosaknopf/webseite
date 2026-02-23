@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: 6runk/der-rosa-knopf
   branch: main
 
 media_folder: "src/assets/uploads"
