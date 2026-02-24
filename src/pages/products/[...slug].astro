@@ -40,7 +40,7 @@ const ogImage = new URL(
             <div class="space-y-4">
                 <div class="pswp-gallery" id="my-gallery">
                     <div
-                        class="aspect-square bg-rose-50/50 rounded-3xl overflow-hidden border border-rose-100 relative group cursor-pointer"
+                        class="aspect-square bg-rose-100/60 rounded-3xl overflow-hidden border border-rose-200 relative group cursor-pointer"
                     >
                         {
                             product.data.heroImage ? (
@@ -129,12 +129,12 @@ const ogImage = new URL(
             <div class="flex flex-col">
                 <div class="mb-auto">
                     <h1
-                        class="text-4xl font-serif font-bold text-gray-900 mb-2"
+                        class="text-4xl font-serif font-bold text-rose-950 mb-2"
                     >
                         {product.data.title}
                     </h1>
                     <div
-                        class="text-3xl font-bold text-rose-500 mb-6 whitespace-nowrap"
+                        class="text-3xl font-bold text-rose-600 mb-6 whitespace-nowrap"
                     >
                         {
                             product.data.price % 1 === 0
@@ -149,7 +149,7 @@ const ogImage = new URL(
                 </div>
 
                 <div
-                    class="bg-rose-50/50 p-6 rounded-2xl border border-rose-100 shadow-sm sticky bottom-4 md:static"
+                    class="bg-rose-100/60 p-6 rounded-2xl border border-rose-200 shadow-sm sticky bottom-4 md:static"
                 >
                     <BuyButton
                         stripeLink={product.data.stripeLink}
