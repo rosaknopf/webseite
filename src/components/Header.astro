@@ -5,15 +5,15 @@ import { Icon } from "astro-icon/components";
 ---
 
 <header
-    class="bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-rose-100 shadow-sm"
+    class="bg-white/90 backdrop-blur-md sticky top-0 z-40 border-b border-gray-200 shadow-sm"
 >
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
         <!-- Logo -->
         <a
             href="/"
-            class="text-2xl font-serif font-bold text-rose-900 hover:text-rose-700 transition"
+            class="text-2xl font-serif font-bold text-gray-800 hover:text-gray-600 transition"
+            set:html={siteConfig.title.replace("Rosa", "<span class='text-rose-500'>R</span>osa")}
         >
-            {siteConfig.title}
         </a>
 
         <!-- Navigation (Desktop) -->
@@ -22,7 +22,7 @@ import { Icon } from "astro-icon/components";
                 siteConfig.navigation.map((item) => (
                     <a
                         href={item.href}
-                        class="text-sm uppercase tracking-wide font-medium hover:text-rose-600 transition decoration-rose-300 underline-offset-4 hover:underline"
+                        class="text-sm uppercase tracking-wide font-medium text-gray-700 hover:text-rose-500 transition decoration-rose-300 underline-offset-4 hover:underline"
                     >
                         {item.name}
                     </a>
@@ -33,7 +33,7 @@ import { Icon } from "astro-icon/components";
         <!-- Mobile Menu Button -->
         <button
             id="mobile-menu-btn"
-            class="md:hidden text-rose-900 focus:outline-none"
+            class="md:hidden text-gray-800 hover:text-rose-500 transition focus:outline-none"
             aria-label="Menu"
         >
             <svg
@@ -55,14 +55,14 @@ import { Icon } from "astro-icon/components";
     <!-- Mobile Navigation Menu -->
     <div
         id="mobile-menu"
-        class="hidden md:hidden border-t border-rose-100 bg-rose-50/95 backdrop-blur-md"
+        class="hidden md:hidden border-t border-gray-200 bg-white/95 backdrop-blur-md shadow-md"
     >
         <nav class="container mx-auto px-4 py-4 flex flex-col gap-4">
             {
                 siteConfig.navigation.map((item) => (
                     <a
                         href={item.href}
-                        class="text-lg font-medium text-rose-900 hover:text-rose-600 transition py-2 border-b border-rose-100 last:border-0"
+                        class="text-lg font-medium text-gray-800 hover:text-rose-500 transition py-2 border-b border-gray-100 last:border-0"
                     >
                         {item.name}
                     </a>

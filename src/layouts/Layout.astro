@@ -31,7 +31,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link rel="icon" type="image/png" href="/rosa-knopf-logo.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 
@@ -66,18 +66,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta property="twitter:image" content={new URL(image, Astro.url)} />
 	</head>
 	<body
-		class="bg-rose-50 text-brand-text min-h-screen flex flex-col font-sans"
+		class="bg-gray-50 text-brand-text min-h-screen flex flex-col font-sans"
 	>
 		{
 			siteConfig.announcement?.enabled && (
-				<div class="bg-rose-100 text-rose-900 px-4 py-2 text-center text-sm font-medium border-b border-rose-200">
+				<div class="bg-gray-100 text-gray-800 px-4 py-2 text-center text-sm font-medium border-b border-gray-200">
 					{siteConfig.announcement.message}
 				</div>
 			)
 		}
 		{
 			siteConfig.holidayMode.enabled && (
-				<div class="bg-rose-900 text-white text-center py-2 px-4 shadow sticky top-0 z-50">
+				<div class="bg-rose-500 text-white text-center py-2 px-4 shadow sticky top-0 z-50">
 					<p class="text-sm font-medium">
 						🌴 {siteConfig.holidayMode.message}
 					</p>

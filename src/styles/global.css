@@ -21,10 +21,10 @@
   --color-rose-950: #4c0519;
 
   /* Custom Brand Colors */
-  --color-brand-light: #fdf2f8; /* Very light pink background */
-  --color-brand-primary: #ec4899; /* Pink-500ish equivalent */
-  --color-brand-text: #374151; /* Gray-700 */
-  --color-brand-heading: #111827; /* Gray-900 */
+  --color-brand-light: #f9fafb; /* Very light gray/white background (gray-50) */
+  --color-brand-primary: #f43f5e; /* Rose-500 */
+  --color-brand-text: #4b5563; /* Gray-600 */
+  --color-brand-heading: #1f2937; /* Gray-800 */
 
   /* Fonts */
   --font-serif: "Playfair Display", serif;
