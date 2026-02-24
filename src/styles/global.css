@@ -21,10 +21,14 @@
   --color-rose-950: #4c0519;
 
   /* Custom Brand Colors */
-  --color-brand-light: #f9fafb; /* Very light gray/white background (gray-50) */
-  --color-brand-primary: #f43f5e; /* Rose-500 */
-  --color-brand-text: #4b5563; /* Gray-600 */
-  --color-brand-heading: #1f2937; /* Gray-800 */
+  --color-brand-light: #fff5f7;
+  /* Very subtle rose-tinted white */
+  --color-brand-primary: #f43f5e;
+  /* Rose-500 */
+  --color-brand-text: #4b5563;
+  /* Gray-600 */
+  --color-brand-heading: #1f2937;
+  /* Gray-800 */
 
   /* Fonts */
   --font-serif: "Playfair Display", serif;
@@ -56,7 +60,12 @@
     font-family: var(--font-sans);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-serif);
     color: var(--color-brand-heading);
     font-weight: 700;

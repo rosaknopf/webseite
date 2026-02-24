@@ -28,9 +28,9 @@ const projects = (await getCollection("projects")).sort(
                 projects.map((project) => (
                     <a
                         href={`/projects/${project.slug}/`}
-                        class="group block bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100 flex flex-col md:flex-row h-full"
+                        class="group block bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition border border-rose-100 flex flex-col md:flex-row h-full"
                     >
-                        <div class="md:w-1/2 aspect-[4/3] md:aspect-auto overflow-hidden bg-gray-50 relative">
+                        <div class="md:w-1/2 aspect-[4/3] md:aspect-auto overflow-hidden bg-rose-50/50 relative">
                             {project.data.heroImage ? (
                                 <img
                                     src={project.data.heroImage}
