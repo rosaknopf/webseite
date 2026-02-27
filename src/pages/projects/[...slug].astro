@@ -15,17 +15,9 @@ type Props = CollectionEntry<"projects">;
 const project = Astro.props;
 const { Content } = await project.render();
 
-let ogImage: string | undefined = undefined;
-if (project.data.heroImage) {
-    const optimizedBg = await getImage({
-        src: project.data.heroImage,
-        format: "jpg",
-        width: 1200,
-        height: 630,
-        fit: "cover",
-    });
-    ogImage = optimizedBg.src;
-}
+import { siteConfig } from "../../data/siteConfig";
+
+const ogImage = new URL(`/og/projects/${project.slug}.png`, siteConfig.siteUrl).toString();
 ---
 
 <PostLayout
