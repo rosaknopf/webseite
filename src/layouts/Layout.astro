@@ -17,7 +17,7 @@ interface Props {
 const {
 	title = siteConfig.title,
 	description = siteConfig.description,
-	image = "/og/default.png",
+	image = "/og-image.png",
 	imageWidth,
 	imageHeight,
 } = Astro.props;
@@ -36,6 +36,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<title>{title}</title>
 
 		<!-- Open Graph / Facebook -->
+		<meta property="og:locale" content={siteConfig.language || "de"} />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={Astro.url} />
 		<meta property="og:title" content={title} />

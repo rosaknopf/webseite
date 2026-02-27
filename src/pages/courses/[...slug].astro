@@ -26,15 +26,17 @@ const courseDate = new Date(course.data.date).toLocaleDateString("de-DE", {
 });
 
 let ogImage = "/og-image.png";
+let ogImageWidth: number | undefined;
+let ogImageHeight: number | undefined;
+
 if (course.data.heroImage) {
-    const optimizedBg = await getImage({
-        src: course.data.heroImage,
-        format: "jpg",
-        width: 1200,
-        height: 630,
-        fit: "cover",
-    });
-    ogImage = optimizedBg.src;
+    if (typeof course.data.heroImage === 'string') {
+        ogImage = course.data.heroImage;
+    } else {
+        ogImage = course.data.heroImage.src;
+        ogImageWidth = course.data.heroImage.width;
+        ogImageHeight = course.data.heroImage.height;
+    }
 }
 ---
 
@@ -42,8 +44,8 @@ if (course.data.heroImage) {
     title={`${course.data.title} | Kurs`}
     description={course.data.description}
     image={ogImage}
-    imageWidth={ogImage !== "/og-image.png" ? 1200 : undefined}
-    imageHeight={ogImage !== "/og-image.png" ? 630 : undefined}
+    imageWidth={ogImageWidth}
+    imageHeight={ogImageHeight}
 >
     <article class="max-w-4xl mx-auto px-4 py-12">
         <div class="grid md:grid-cols-3 gap-8 mb-12">
