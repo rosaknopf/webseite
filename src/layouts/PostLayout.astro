@@ -12,6 +12,8 @@ interface Props {
     image?: string;
     imageWidth?: number | string;
     imageHeight?: number | string;
+    parentLabel?: string;
+    parentUrl?: string;
 }
 
 const {
@@ -23,6 +25,8 @@ const {
     image,
     imageWidth,
     imageHeight,
+    parentLabel,
+    parentUrl,
 } = Astro.props;
 ---
 
@@ -33,7 +37,19 @@ const {
     imageWidth={imageWidth}
     imageHeight={imageHeight}
 >
-    <article class="max-w-3xl mx-auto px-4 py-12">
+    <article class="max-w-3xl mx-auto px-4 py-8 md:py-12">
+        <nav class="text-sm text-gray-500 mb-8 tracking-wide">
+            <a href="/" class="hover:text-rose-600 transition">Home</a>
+            {parentLabel && parentUrl && (
+                <>
+                    <span class="mx-2">/</span>
+                    <a href={parentUrl} class="hover:text-rose-600 transition">{parentLabel}</a>
+                </>
+            )}
+            <span class="mx-2">/</span>
+            <span class="text-gray-800">{title}</span>
+        </nav>
+
         <div class="mb-8 text-center">
             {
                 heroImage && (

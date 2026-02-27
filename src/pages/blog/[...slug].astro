@@ -26,6 +26,8 @@ const ogImage = new URL(`/og/blog/${post.slug}.png`, siteConfig.siteUrl).toStrin
     image={ogImage}
     imageWidth={ogImage ? 1200 : undefined}
     imageHeight={ogImage ? 630 : undefined}
+    parentLabel="Blog"
+    parentUrl="/blog/"
 >
     <Content />
 </PostLayout>
