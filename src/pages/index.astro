@@ -6,10 +6,10 @@ import { Image } from "astro:assets";
 
 // Fetch Homepage Content
 const homeEntry = await getEntry("pages", "home");
-const { hero, features, intro } = homeEntry.data;
+const { hero, features, intro, description } = homeEntry.data;
 ---
 
-<Layout title={siteConfig.title}>
+<Layout title={siteConfig.title} description={description}>
 	<!-- Hero Section -->
 	<section
 		class="relative bg-rose-100 rounded-3xl overflow-hidden mb-16 min-h-[500px] flex items-center justify-center text-center px-4"

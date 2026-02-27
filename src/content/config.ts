@@ -84,6 +84,7 @@ const pages = defineCollection({
 
         // Generic / About Page
         title: z.string(), // Meta Title or Internal
+        description: z.string().optional(),
         mainHeading: z.string().optional(), // Page H1
         quote: z.string().optional(),
         heroImage: image().optional(),

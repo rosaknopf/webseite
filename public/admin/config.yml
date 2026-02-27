@@ -41,6 +41,7 @@ collections:
         file: "src/content/pages/home.md"
         fields:
           - {label: "Titel (Intern)", name: "title", widget: "string", default: "Startseite"}
+          - {label: "SEO Beschreibung", name: "description", widget: "string", required: false}
           - label: "Hero Bereich (Oben)"
             name: "hero"
             widget: "object"
@@ -84,6 +85,7 @@ collections:
         file: "src/content/pages/about.md"
         fields:
           - {label: "Titel (Intern)", name: "title", widget: "string", default: "Über Uns"}
+          - {label: "SEO Beschreibung", name: "description", widget: "string", required: false}
           - {label: "Haupt-Überschrift", name: "mainHeading", widget: "string", default: "Die Geschichte hinter dem Knopf"}
           - {label: "Zitat", name: "quote", widget: "string"}
           - {label: "Portrait Bild", name: "heroImage", widget: "image"}

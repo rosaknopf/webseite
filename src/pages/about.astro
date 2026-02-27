@@ -11,12 +11,12 @@ if (!aboutPage) {
 }
 
 const { Content } = await aboutPage.render();
-const { title, mainHeading, quote, heroImage } = aboutPage.data;
+const { title, mainHeading, quote, heroImage, description } = aboutPage.data;
 ---
 
 <Layout
     title={`${title} | ${siteConfig.title}`}
-    description={`Die Geschichte hinter ${siteConfig.title}`}
+    description={description || `Die Geschichte hinter ${siteConfig.title}`}
 >
     <div class="max-w-4xl mx-auto py-12 px-4">
         <div class="text-center mb-16">
