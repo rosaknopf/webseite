@@ -4,7 +4,7 @@ description: Ein treuer Begleiter für deine Reisen oder das Badezimmer. Dieser 
 price: 100
 heroImage: ../../assets/uploads/kulturbeutel.jpeg
 gallery: []
-stripeLink: '#'
+stripeLink: https://buy.stripe.com/test_8x25kCbsy7RVdzl2hl1wY01
 isPinned: true
 isUnique: true
 isSoldOut: false
