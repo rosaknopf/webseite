@@ -40,6 +40,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta property="og:url" content={Astro.url} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
+		<meta property="og:site_name" content={siteConfig.title} />
+		<meta 
+			property="og:logo" 
+			content={new URL("/rosa-knopf-logo.png", Astro.site || siteConfig.siteUrl).toString()} 
+		/>
 		<meta
 			property="og:image"
 			content={new URL(image, Astro.site || siteConfig.siteUrl).toString()}

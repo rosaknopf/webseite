@@ -11,6 +11,13 @@ Deine neue Seite wurde handwerklich genauso sorgfältig maßgeschneidert wie dei
 
 Das Beste daran? Du musst dich um all diese Technik nicht kümmern. Du fokussierst dich auf deine Arbeit und die Inhalte.
 
+### Checkliste: Was wir gemeinsam bei der Übergabe einrichten
+Damit du direkt sicher starten kannst, gehen wir folgende Schritte einmal gemeinsam durch:
+- [ ] Deinen Zugang zum Redaktionssystem (CMS) testen.
+- [ ] Dein Profil und deinen "Über mich"-Text anschauen.
+- [ ] Ein erstes Demo-Produkt anlegen und die Verbindung zu Stripe (Bezahlung) verstehen.
+- [ ] Einen kurzen Beispiel-Blogbeitrag erstellen, um den Text-Editor kennenzulernen.
+
 ---
 
 ## 1. Das Redaktionssystem (CMS) aufrufen
@@ -51,25 +58,45 @@ Dadurch passiert folgendes automatisch: Wenn jemand die Tasche kauft, wird der L
 ## 3. Blogbeiträge schreiben
 
 Hast du Tipps für die Stoffwahl oder möchtest Bilder aus deiner Werkstatt zeigen? 
-Klicke links auf **"Blog"** und erstelle einen neuen Eintrag. 
-
-Beim Textfeld (**Inhalt**) kannst du fast wie in Word arbeiten: Text markieren für *kursiv* oder **fett**, Listen anlegen oder Überschriften setzen. Bedenke dabei immer: Deine Kunden schätzen deine mehr als 30-jährige Erfahrung. Schreib genau so einladend, wie du es im echten Leben erklären würdest!
+Klicke links auf **"Blog"** und erstelle einen neuen Eintrag. Bedenke dabei immer: Deine Kunden schätzen deine mehr als 30-jährige Erfahrung. Schreib genau so einladend, wie du es im echten Leben erklären würdest!
 
 ---
 
-## 4. Nähkurse aktualisieren
+## 4. Der Text-Editor (Schreiben & Formatieren)
+
+Wenn du lange Texte schreibst (z.B. im Blog, bei den Kursen oder auf der "Über mich"-Seite), steht dir ein umfangreicher **Text-Editor** zur Verfügung. Das zugehörige Textfeld heißt meistens **"Inhalt"** (oder "Body"). Du kannst dort fast wie in Word arbeiten. 
+
+Hier ist eine Übersicht, was du alles machen kannst:
+* **Text formatieren:** Mache Wörter **fett** oder *kursiv*, um sie hervorzuheben. Einfach den Text markieren und in der Menüleiste des Editors auf das **B** (Bold/Fett) oder *I* (Italic/Kursiv) klicken.
+* **Überschriften:** Strukturiere lange Texte mit Zwischenüberschriften (wie "H2" oder "H3"). Das macht es für den Leser viel übersichtlicher.
+* **Listen:** Erstelle Aufzählungen mit Punkten oder nummerierte Listen (perfekt für Schritt-für-Schritt-Anleitungen oder Materiallisten).
+* **Links einfügen:** Du kannst Wörter markieren und einen Link hinterlegen (z.B. auf deine Nähkurse oder zu einem Produkt im Shop).
+* **Bilder einfügen:** Lade direkt im Text Bilder hoch, um deine Beiträge lebendiger zu machen.
+* **Zitate:** Hebe wichtige Aussagen als Blockzitat hervor.
+
+*Tipp:* Wenn du dir unsicher bist, probiere es einfach an einem neuen Entwurf aus!
+
+---
+
+## 5. Nähkurse aktualisieren
 
 Wenn sich die Termine für das nächste Quartal ändern oder du einen neuen Workshop-Block anbietest, klicke links auf **"Kurse / Workshops"**.
 
-Du findest hier Felder für den Beginn ("Startdatum"), Dauer und den Ort. Du kannst im Textfeld dann ganz übersichtlich aufschreiben, wann genau der Mittwochskurs und wann der Donnerstagskurs stattfindet.
+Du findest hier Felder für den Beginn ("Startdatum"), Dauer und den Ort. Du kannst im Text-Editor dann ganz übersichtlich aufschreiben, wann genau der Mittwochskurs und wann der Donnerstagskurs stattfindet.
 
 ---
 
-## 5. Zu guter Letzt: Das Speichern
+## 6. Zu guter Letzt: Das Speichern & Bauen im Hintergrund
 
 Egal in welchem Bereich du arbeitest (Shop, Blog, Kurse) – wenn du fertig bist, drückst du oben auf **"Speichern"** (oder Publish/Veröffentlichen). 
 
-**Wichtig zu wissen:** Weil deine Webseite so extrem schnell und sicher ist, baut sie nach jedem Klick auf "Speichern" eine brandneue Version von sich selbst, die dann ins Netz geladen wird. 
-Es dauert also nach dem Speichern immer ca. **1 bis 2 Minuten**, bis die Änderungen für alle Menschen sichtbar im Internet auftauchen. 
+**Wichtig zu wissen: Deine Seite wird im Hintergrund neu gebaut!**
+Normale Webseiten (wie z.B. WordPress) bauen bei jedem Besucherzugriff alles frisch aus einer Datenbank zusammen. Das macht sie oft langsam und sehr anfällig für Hacker. 
+Deine Seite ist hier modern und anders: Wenn du auf "Speichern" klickst, fängt im Hintergrund ein System an, eine komplett fertige, rasend schnelle und absolut sichere Version deiner neuen Seite zu "bauen" und als fertiges Paket ins Netz zu stellen. 
+
+* **Der große Vorteil für dich:** Du musst dich nie um technische Updates oder Hacker-Angriffe sorgen. Deine Seite ist für deine Besucher immer blitzschnell da und extrem sicher.
+* **Was das für deine Arbeit bedeutet:** Nachdem du auf Speichern gedrückt hast, dauert es immer **ca. 1 bis 2 Minuten**, bis die Seite im Hintergrund fertig "gebaut" wurde und die Änderungen für alle Menschen im Internet sichtbar auftauchen. 
+
+Hab also nach dem Speichern einen kurzen Moment Geduld – lade einfach deine Webseite nach ein, zwei Minuten neu, und deine neuesten Werke sind online!
 
 Viel Freude mit deiner digitalen Werkstatt!
