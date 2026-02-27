@@ -1,6 +1,6 @@
 ---
 title: "Impressum"
-updatedDate: 2023-10-27
+updatedDate: 2026-02-27
 ---
 
 ## Angaben gemäß § 5 TMG
