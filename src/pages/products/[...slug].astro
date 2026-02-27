@@ -17,21 +17,28 @@ type Props = CollectionEntry<"products">;
 const product = Astro.props;
 const { Content } = await product.render();
 
-// Use dynamic OG image with Price & CTA
-const ogImage = new URL(
-    `/og/products/${product.slug}.png`,
-    siteConfig.siteUrl,
-).toString();
+// Use heroImage instead of failing dynamic generator
+let ogImage = "/og-image.png";
+let ogImageWidth: number | undefined;
+let ogImageHeight: number | undefined;
 
-// Keep heroImage jpg generaton? No, we use the dynamic one now.
+if (product.data.heroImage) {
+    if (typeof product.data.heroImage === 'string') {
+        ogImage = product.data.heroImage;
+    } else {
+        ogImage = product.data.heroImage.src;
+        ogImageWidth = product.data.heroImage.width;
+        ogImageHeight = product.data.heroImage.height;
+    }
+}
 ---
 
 <Layout
     title={`${product.data.title} | Shop`}
     description={product.data.description}
     image={ogImage}
-    imageWidth={1200}
-    imageHeight={630}
+    imageWidth={ogImageWidth}
+    imageHeight={ogImageHeight}
 >
     <div class="max-w-6xl mx-auto px-4 py-12">
         <nav class="text-sm text-gray-500 mb-8 tracking-wide">

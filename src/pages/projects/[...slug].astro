@@ -17,15 +17,13 @@ const { Content } = await project.render();
 
 import { siteConfig } from "../../data/siteConfig";
 
-const ogImage = new URL(`/og/projects/${project.slug}.png`, siteConfig.siteUrl).toString();
 ---
 
 <PostLayout
     {...project.data}
     heroImage={project.data.heroImage}
-    image={ogImage}
-    imageWidth={ogImage ? 1200 : undefined}
-    imageHeight={ogImage ? 630 : undefined}
+    imageWidth={1200}
+    imageHeight={630}
     parentLabel="Projekte"
     parentUrl="/projects/"
 >
