@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { siteConfig } from "../../data/siteConfig";
+import { Image } from "astro:assets";
 
 const projects = (await getCollection("projects")).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -32,10 +33,12 @@ const projects = (await getCollection("projects")).sort(
                     >
                         <div class="md:w-1/2 aspect-[4/3] md:aspect-auto overflow-hidden bg-rose-100/60 relative">
                             {project.data.heroImage ? (
-                                <img
+                                <Image
                                     src={project.data.heroImage}
                                     alt=""
                                     class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+                                    width={960}
+                                    densities={[1.5, 2]}
                                 />
                             ) : (
                                 <div class="w-full h-full flex items-center justify-center text-gray-300 bg-gray-50">
