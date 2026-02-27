@@ -5,9 +5,11 @@ import icon from 'astro-icon';
 import sitemap from '@astrojs/sitemap';
 import netlify from '@astrojs/netlify';
 
+import configData from './src/data/config.json' with { type: 'json' };
+
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://der-rosa-knopf.de',
+  site: configData.siteUrl || 'https://der-rosa-knopf.de',
   output: 'static',
   adapter: netlify(),
   vite: {
