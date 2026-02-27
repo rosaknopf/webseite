@@ -97,9 +97,11 @@ const products = (await getCollection("products")).sort((a, b) => {
                                     €
                                 </span>
                             </div>
-                            <p class="text-gray-600 text-sm line-clamp-2 mb-4 flex-grow">
-                                {product.data.description}
-                            </p>
+                            <div class="flex-grow mb-4 flex flex-col">
+                                <p class="text-gray-600 text-sm line-clamp-2">
+                                    {product.data.description}
+                                </p>
+                            </div>
                             <span class="text-center block w-full py-2 rounded-lg bg-rose-100/60 text-rose-950 font-medium group-hover:bg-rose-500 group-hover:text-white transition">
                                 {product.data.isSoldOut
                                     ? "Details ansehen"
