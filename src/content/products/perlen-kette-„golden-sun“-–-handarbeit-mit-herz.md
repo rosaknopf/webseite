@@ -1,14 +1,13 @@
 ---
 title: Perlen-Kette „Golden Sun“ – Handarbeit mit Herz
-description: Warme Gold- und Orangetöne treffen auf filigrane Handarbeit. Diese
-  Kette wird mit einer extrem feinen Häkelnadel und winzigen Glasperlen
-  gefertigt. Ein edler Holz-Akzent verleiht dem Ganzen eine natürliche Note.
+description: Warme Gold- und Orangetöne treffen auf filigrane Handarbeit. Diese Kette wird mit einer extrem feinen Häkelnadel und winzigen Glasperlen gefertigt. Ein edler Holz-Akzent verleiht dem Ganzen eine natürliche Note.
 price: 150
 heroImage: ../../assets/uploads/kette.jpeg
-stripeLink: "#"
+stripeLink: https://buy.stripe.com/test_8x25kCbsy7RVdzl2hl1wY01
 isUnique: true
 isSoldOut: false
 ---
+
 **Beschreibung:**
 Warme Gold- und Orangetöne treffen auf filigrane Handarbeit. Diese Kette wird mit einer extrem feinen Häkelnadel und winzigen Glasperlen gefertigt. Ein edler Holz-Akzent verleiht dem Ganzen eine natürliche Note.
 
