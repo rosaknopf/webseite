@@ -46,12 +46,13 @@ if (isSoldOut) {
                 href={stripeLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="block w-full text-center bg-rose-600 hover:bg-rose-700 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1"
+                data-stripe-url={stripeLink}
+                class="stripe-buy-link block w-full text-center bg-rose-600 hover:bg-rose-700 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1"
             >
-                {buttonText} —{" "}
+                <span class="btn-text">{buttonText} —{" "}
                 <span class="whitespace-nowrap">
                     {price % 1 === 0 ? price : price.toFixed(2)} €
-                </span>
+                </span></span>
                 {isUnique && (
                     <span class="block text-xs font-normal opacity-90 mt-1">
                         Unikat - Nur 1x verfügbar
@@ -71,3 +72,32 @@ if (isSoldOut) {
         )
     }
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", async () => {
+        const buttons = document.querySelectorAll('.stripe-buy-link');
+        
+        for (const btn of buttons) {
+            const url = btn.getAttribute('data-stripe-url');
+            if(!url) continue;
+            
+            try {
+                // Ping our custom Netlify Function running on Hybrid SSR
+                const res = await fetch(`/api/check-stock?url=${encodeURIComponent(url)}`);
+                if (res.ok) {
+                    const data = await res.json();
+                    
+                    // If Stripe reports the link is inactive (e.g. stock depleted)
+                    if (data.active === false) {
+                        btn.classList.add('bg-gray-100', 'text-gray-500', 'cursor-not-allowed', 'opacity-70', 'pointer-events-none');
+                        btn.classList.remove('bg-rose-600', 'hover:bg-rose-700', 'text-white', 'shadow-lg', 'hover:shadow-xl', 'hover:-translate-y-1');
+                        btn.innerHTML = 'Ausverkauft <span class="block text-xs font-normal mt-1 text-gray-400">Dieses Unikat ist leider schon weg. (Live Status)</span>';
+                        btn.removeAttribute('href');
+                    }
+                }
+            } catch (e) {
+                console.error("Failed to verify live stock with Stripe", e);
+            }
+        }
+    });
+</script>
