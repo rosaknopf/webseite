@@ -52,8 +52,8 @@ const products = allProducts
 
         {featuredProduct && (
             <div class="mb-16">
-                <div class="relative w-full bg-white rounded-3xl border border-rose-200 shadow-xl overflow-hidden flex flex-col md:flex-row group">
-                    <div class="w-full md:w-1/2 aspect-square md:aspect-auto md:h-auto bg-rose-50 overflow-hidden relative">
+                <div class="relative w-full bg-white rounded-3xl border border-rose-200 shadow-xl overflow-hidden flex flex-col md:flex-row group md:h-[420px] lg:h-[460px]">
+                    <div class="w-full md:w-1/2 aspect-square md:aspect-auto md:h-full bg-rose-50 overflow-hidden relative">
                         {featuredProduct.data.gallery && featuredProduct.data.gallery.length > 0 ? (
                             <div class="flex overflow-x-auto snap-x snap-mandatory h-full scrollbar-hide hide-scrollbar w-full">
                                 <div class="w-full shrink-0 h-full snap-start relative">

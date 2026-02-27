@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 /* Import Local Fonts via @fontsource packages */
 /* Note: These must be imported in the layout component usually for Astro processing, 
