@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://der-rosa-knopf.de/sitemap-index.xml
