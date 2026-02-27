@@ -4,13 +4,21 @@ import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import { siteConfig } from "../../data/siteConfig";
 
-const products = (await getCollection("products")).sort((a, b) => {
-    // Sort logic: Available first, then by title/date
-    if (a.data.isSoldOut === b.data.isSoldOut) {
-        return 0; // Keep original order or sort by date if added
-    }
-    return a.data.isSoldOut ? 1 : -1;
-});
+const allProducts = await getCollection("products");
+const pinnedProducts = allProducts
+    .filter((p) => p.data.isPinned)
+    .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf());
+
+const featuredProduct = pinnedProducts.length > 0 ? pinnedProducts[0] : null;
+
+const products = allProducts
+    .filter((p) => !featuredProduct || p.slug !== featuredProduct.slug)
+    .sort((a, b) => {
+        if (a.data.isSoldOut === b.data.isSoldOut) {
+            return new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf();
+        }
+        return a.data.isSoldOut ? 1 : -1;
+    });
 ---
 
 <Layout
@@ -39,6 +47,108 @@ const products = (await getCollection("products")).sort((a, b) => {
                 </select>
             </div>
         </div>
+
+        </div>
+
+        {featuredProduct && (
+            <div class="mb-16">
+                <div class="relative w-full bg-white rounded-3xl border border-rose-200 shadow-xl overflow-hidden flex flex-col md:flex-row group">
+                    <div class="w-full md:w-1/2 aspect-square md:aspect-auto md:h-auto bg-rose-50 overflow-hidden relative">
+                        {featuredProduct.data.gallery && featuredProduct.data.gallery.length > 0 ? (
+                            <div class="flex overflow-x-auto snap-x snap-mandatory h-full scrollbar-hide hide-scrollbar w-full">
+                                <div class="w-full shrink-0 h-full snap-start relative">
+                                    <Image
+                                        src={featuredProduct.data.heroImage || featuredProduct.data.gallery[0].image}
+                                        alt={featuredProduct.data.title}
+                                        class="w-full h-full object-cover"
+                                        width={1024}
+                                        densities={[1.5, 2]}
+                                    />
+                                </div>
+                                {featuredProduct.data.gallery.map((item) => (
+                                    <div class="w-full shrink-0 h-full snap-start relative">
+                                        <Image
+                                            src={item.image}
+                                            alt={featuredProduct.data.title}
+                                            class="w-full h-full object-cover"
+                                            width={1024}
+                                            densities={[1.5, 2]}
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        ) : (
+                            featuredProduct.data.heroImage ? (
+                                <Image
+                                    src={featuredProduct.data.heroImage}
+                                    alt={featuredProduct.data.title}
+                                    class="w-full h-full object-cover"
+                                    width={1024}
+                                    densities={[1.5, 2]}
+                                />
+                            ) : (
+                                <div class="w-full h-full flex items-center justify-center text-rose-300">
+                                    <span class="text-6xl opacity-20">🧶</span>
+                                </div>
+                            )
+                        )}
+                        <div class="absolute top-4 left-4 right-4 flex justify-between pointer-events-none">
+                            <div class="bg-rose-600 text-white px-4 py-1 text-sm font-bold uppercase tracking-wider rounded-full shadow-md backdrop-blur-md">
+                                Highlight
+                            </div>
+                            {featuredProduct.data.isUnique && (
+                                <div class="bg-white/90 text-rose-600 px-4 py-1 text-sm font-bold uppercase tracking-wider rounded-full shadow-md backdrop-blur-md">
+                                    Unikat
+                                </div>
+                            )}
+                        </div>
+                        {featuredProduct.data.isSoldOut && (
+                            <div class="absolute inset-0 bg-white/50 backdrop-blur-sm flex items-center justify-center pointer-events-none">
+                                <span class="bg-rose-900 text-white px-6 py-3 font-bold uppercase tracking-widest text-xl rounded-full transform -rotate-12 shadow-2xl border-4 border-white">
+                                    Verkauft
+                                </span>
+                            </div>
+                        )}
+                        {featuredProduct.data.gallery && featuredProduct.data.gallery.length > 0 && (
+                            <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2 pointer-events-none opacity-50">
+                                <span class="bg-black/50 text-white text-xs px-2 py-1 rounded-full backdrop-blur-md">Mehr Bilder &rarr;</span>
+                            </div>
+                        )}
+                    </div>
+                    
+                    <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center relative">
+                        <div class="flex justify-between items-start mb-4">
+                            <h2 class="text-3xl md:text-4xl font-serif font-bold text-rose-950">
+                                {featuredProduct.data.title}
+                            </h2>
+                            <span class="font-bold text-gray-800 bg-gray-100 px-3 py-1 rounded-lg text-lg whitespace-nowrap ml-4 border border-gray-200">
+                                {featuredProduct.data.price % 1 === 0 ? featuredProduct.data.price : featuredProduct.data.price.toFixed(2)} €
+                            </span>
+                        </div>
+                        <p class="text-gray-600 text-base md:text-lg mb-8 line-clamp-4">
+                            {featuredProduct.data.description}
+                        </p>
+                        
+                        <a 
+                            href={`/products/${featuredProduct.slug}/`} 
+                            class="inline-flex justify-center items-center w-full py-4 rounded-xl bg-rose-600 text-white font-bold text-lg hover:bg-rose-700 transition shadow-md hover:shadow-xl hover:-translate-y-1"
+                        >
+                            {featuredProduct.data.isSoldOut ? "Details ansehen" : "Zum Produkt"}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        )}
+
+        <style>
+            .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .hide-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        </style>
 
         <div
             id="product-grid"

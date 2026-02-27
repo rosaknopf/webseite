@@ -31,6 +31,7 @@ const products = defineCollection({
             image: image(),
         })).optional(),
         stripeLink: z.string().optional(), // Payment Link URL
+        isPinned: z.boolean().default(false),
         isSoldOut: z.boolean().default(false),
         isUnique: z.boolean().default(true), // 1-of-1 item
         draft: z.boolean().default(false),

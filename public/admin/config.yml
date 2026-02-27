@@ -117,6 +117,7 @@ collections:
         fields:
           - {label: "Bild", name: "image", widget: "image"}
       - {label: "Stripe Payment Link", name: "stripeLink", widget: "string", required: false}
+      - {label: "Gepinnt (Ganz oben)?", name: "isPinned", widget: "boolean", default: false}
       - {label: "Ist Unikat?", name: "isUnique", widget: "boolean", default: true}
       - {label: "Ist Verkauft?", name: "isSoldOut", widget: "boolean", default: false}
       - {label: "Inhalt", name: "body", widget: "markdown"}
