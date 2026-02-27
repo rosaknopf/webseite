@@ -25,8 +25,8 @@ const products = allProducts
     title={`Shop | ${siteConfig.title}`}
     description="Handgemachte Unikate für Sie."
 >
-    <section class="max-w-6xl mx-auto py-12">
-        <div class="text-center mb-16">
+    <section class="max-w-6xl mx-auto px-4 py-8">
+        <div class="text-center mb-10">
             <h1 class="text-4xl md:text-5xl font-serif text-rose-950 mb-4">
                 Unser Shop
             </h1>
@@ -35,23 +35,8 @@ const products = allProducts
             </p>
         </div>
 
-        <div class="flex justify-end mb-8 relative z-10">
-            <div class="relative inline-block text-left">
-                <select
-                    id="sort-select"
-                    class="block w-full pl-3 pr-10 py-2 text-base border-gray-200 focus:outline-none focus:ring-rose-500 focus:border-rose-500 sm:text-sm rounded-md text-gray-800 bg-white shadow-sm cursor-pointer"
-                >
-                    <option value="newest">Neuheiten</option>
-                    <option value="price-asc">Preis aufsteigend</option>
-                    <option value="price-desc">Preis absteigend</option>
-                </select>
-            </div>
-        </div>
-
-        </div>
-
         {featuredProduct && (
-            <div class="mb-16">
+            <div class="mb-10">
                 <div class="relative w-full bg-white rounded-3xl border border-rose-200 shadow-xl overflow-hidden flex flex-col md:flex-row group md:h-[420px] lg:h-[460px]">
                     <div class="w-full md:w-1/2 aspect-square md:aspect-auto md:h-full bg-rose-50 overflow-hidden relative">
                         {featuredProduct.data.gallery && featuredProduct.data.gallery.length > 0 ? (
@@ -139,6 +124,19 @@ const products = allProducts
                 </div>
             </div>
         )}
+
+        <div class="flex justify-end mb-8 relative z-10 w-full">
+            <div class="relative inline-block text-left ml-auto">
+                <select
+                    id="sort-select"
+                    class="block w-full pl-3 pr-10 py-2 text-base border-gray-200 focus:outline-none focus:ring-rose-500 focus:border-rose-500 sm:text-sm rounded-md text-gray-800 bg-white shadow-sm cursor-pointer"
+                >
+                    <option value="newest">Neuheiten</option>
+                    <option value="price-asc">Preis aufsteigend</option>
+                    <option value="price-desc">Preis absteigend</option>
+                </select>
+            </div>
+        </div>
 
         <style>
             .hide-scrollbar::-webkit-scrollbar {
