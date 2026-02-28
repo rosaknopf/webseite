@@ -10,7 +10,7 @@ hero:
 features:
   - title: Shop Unikate
     link: /products
-    image: ../../assets/uploads/store.jpg
+    image: /assets/uploads/IMG_3146.jpeg
   - title: Unsere Projekte
     link: /projects
     image: ../../assets/uploads/projects.jpg
