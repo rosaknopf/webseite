@@ -5,6 +5,7 @@ backend:
 
 media_folder: "src/assets/uploads"
 public_folder: "../../assets/uploads"
+site_url: "https://der-rosa-knopf.de"
 
 collections:
   # Global Settings (Holiday Mode, etc.)
@@ -17,7 +18,7 @@ collections:
         fields:
           - {label: "Titel", name: "title", widget: "string"}
           - {label: "Beschreibung", name: "description", widget: "string"}
-          - {label: "Webseiten-URL", name: "siteUrl", widget: "string", hint: "z.B. https://der-rosa-knopf.netlify.app (Ohne Slash am Ende). Wichtig für Social Media Bilder."}
+          - {label: "Webseiten-URL", name: "siteUrl", widget: "string", hint: "z.B. https://der-rosa-knopf.de (Ohne Slash am Ende). Wichtig für Social Media Bilder."}
           - {label: "Urlaubsmodus", name: "holidayMode", widget: "object", fields: [
               {label: "Aktiviert", name: "enabled", widget: "boolean", default: false},
               {label: "Nachricht", name: "message", widget: "string", default: "Wir sind im Urlaub!", required: false}
