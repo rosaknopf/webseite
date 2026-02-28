@@ -5,7 +5,7 @@ price: 35
 heroImage: ../../assets/uploads/rosa tasche.jpeg
 gallery:
   - image: ../../assets/uploads/rosa tasche 2.jpeg
-stripeLink: https://buy.stripe.com/aFa7sL94C6o57GG3ID3Nm01
+stripeLink: ''
 isPinned: true
 isUnique: true
 isSoldOut: false
