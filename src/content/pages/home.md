@@ -4,7 +4,7 @@ description: ''
 hero:
   title: Handgemacht & Einzigartig
   subtitle: Entdecken Sie liebevoll gestaltete Unikate, inspirierende Projekte und kreative Workshops.
-  image: ../../assets/uploads/debby-hudson-1eV-OecIKgI-unsplash.jpg
+  image: /assets/uploads/debby-hudson-1eV-OecIKgI-unsplash.jpg
   buttonText: Zum Shop
   buttonLink: /products
 features:
