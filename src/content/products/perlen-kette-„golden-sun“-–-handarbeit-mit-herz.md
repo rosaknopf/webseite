@@ -5,7 +5,7 @@ price: 150
 heroImage: ../../assets/uploads/kette.jpeg
 stripeLink: https://buy.stripe.com/test_8x25kCbsy7RVdzl2hl1wY01
 isUnique: true
-isSoldOut: false
+isSoldOut: true
 ---
 
 **Beschreibung:**
