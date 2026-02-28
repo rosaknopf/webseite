@@ -5,7 +5,7 @@ price: 100
 heroImage: ../../assets/uploads/kulturbeutel.jpeg
 gallery: []
 stripeLink: ''
-isPinned: true
+isPinned: false
 isUnique: true
 isSoldOut: true
 ---
