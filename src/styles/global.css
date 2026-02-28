@@ -32,7 +32,8 @@
   /* Gray-800 */
 
   /* Fonts */
-  --font-serif: "Playfair Display", serif;
+  --font-serif: "Nunito", sans-serif;
+  /* kept as --font-serif for backward compatibility with Tailwind classes */
   --font-sans: "Inter", sans-serif;
 
   /* Design System Overrides: Flat Look */

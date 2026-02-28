@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import "@fontsource/playfair-display";
+import "@fontsource/nunito";
 import "@fontsource/inter";
 import { siteConfig } from "../data/siteConfig";
 import Header from "../components/Header.astro";
@@ -42,13 +42,19 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:site_name" content={siteConfig.title} />
-		<meta 
-			property="og:logo" 
-			content={new URL("/rosa-knopf-logo.png", Astro.site || siteConfig.siteUrl).toString()} 
+		<meta
+			property="og:logo"
+			content={new URL(
+				"/rosa-knopf-logo.png",
+				Astro.site || siteConfig.siteUrl,
+			).toString()}
 		/>
 		<meta
 			property="og:image"
-			content={new URL(image, Astro.site || siteConfig.siteUrl).toString()}
+			content={new URL(
+				image,
+				Astro.site || siteConfig.siteUrl,
+			).toString()}
 		/>
 		{
 			imageWidth && (
@@ -69,7 +75,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta property="twitter:url" content={Astro.url} />
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content={new URL(image, Astro.site || siteConfig.siteUrl).toString()} />
+		<meta
+			property="twitter:image"
+			content={new URL(
+				image,
+				Astro.site || siteConfig.siteUrl,
+			).toString()}
+		/>
 	</head>
 	<body
 		class="bg-gray-50 text-brand-text min-h-screen flex flex-col font-sans"
