@@ -8,23 +8,23 @@
    then reference them here or in utility classes. */
 
 @theme {
-  /* Colors - Extending the palette */
-  --color-rose-50: #fff1f2;
-  --color-rose-100: #ffe4e6;
-  --color-rose-200: #fecdd3;
-  --color-rose-300: #fda4af;
-  --color-rose-400: #fb7185;
-  --color-rose-500: #f43f5e;
-  --color-rose-600: #e11d48;
-  --color-rose-700: #be123c;
-  --color-rose-800: #9f1239;
-  --color-rose-900: #881337;
-  --color-rose-950: #4c0519;
+  /* Colors - Extending the palette (Alt Rosa) */
+  --color-rose-50: #fdf8fb;
+  --color-rose-100: #efc3e4;
+  --color-rose-200: #ebbde0;
+  --color-rose-300: #e890bc;
+  --color-rose-400: #c77ea8;
+  --color-rose-500: #a68596;
+  --color-rose-600: #876d7c;
+  --color-rose-700: #695b64;
+  --color-rose-800: #50444c;
+  --color-rose-900: #382e35;
+  --color-rose-950: #261f24;
 
   /* Custom Brand Colors */
-  --color-brand-light: #fff5f7;
+  --color-brand-light: #fdf8fb;
   /* Very subtle rose-tinted white */
-  --color-brand-primary: #f43f5e;
+  --color-brand-primary: #a68596;
   /* Rose-500 */
   --color-brand-text: #4b5563;
   /* Gray-600 */

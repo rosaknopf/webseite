@@ -38,7 +38,7 @@ export const GET: APIRoute = async () => {
                 display: "flex",
                 height: "100%",
                 width: "100%",
-                backgroundColor: "#fff0f3",
+                backgroundColor: "#fdf8fb",
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
@@ -73,7 +73,7 @@ export const GET: APIRoute = async () => {
                                     style: {
                                         fontSize: "72px",
                                         fontWeight: 700,
-                                        color: "#4c0519", // rose-950
+                                        color: "#261f24", // rose-950
                                         margin: 0,
                                         fontFamily: "Inter",
                                     },
@@ -86,7 +86,7 @@ export const GET: APIRoute = async () => {
                                     style: {
                                         fontSize: "36px",
                                         fontWeight: 400,
-                                        color: "#be123c", // rose-700
+                                        color: "#695b64", // rose-700
                                         margin: 0,
                                         fontFamily: "Inter",
                                     },

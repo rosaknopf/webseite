@@ -76,7 +76,7 @@ export const GET: APIRoute = async ({ props }) => {
                 display: "flex",
                 height: "100%",
                 width: "100%",
-                backgroundColor: "#fff0f3", // rose-50
+                backgroundColor: "#fdf8fb", // rose-50
                 backgroundImage: imageBase64 ? `url('${imageBase64}')` : undefined,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
@@ -94,7 +94,7 @@ export const GET: APIRoute = async ({ props }) => {
                             alignItems: "flex-end",
                             width: "100%",
                             padding: "40px",
-                            background: "linear-gradient(to top, rgba(88, 28, 51, 0.9) 0%, rgba(88, 28, 51, 0) 100%)", // rose-950
+                            background: "linear-gradient(to top, rgba(56, 46, 53, 0.9) 0%, rgba(56, 46, 53, 0) 100%)", // rose-950
                         },
                         children: [
                             {
@@ -139,7 +139,7 @@ export const GET: APIRoute = async ({ props }) => {
                                 props: {
                                     children: "Zum Shop",
                                     style: {
-                                        backgroundColor: "#e11d48", // rose-600
+                                        backgroundColor: "#876d7c", // rose-600
                                         color: "white",
                                         fontSize: "32px",
                                         fontWeight: 600,
@@ -180,7 +180,7 @@ export const GET: APIRoute = async ({ props }) => {
     const pngData = resvg.render();
     const pngBuffer = pngData.asPng();
 
-    return new Response(pngBuffer, {
+    return new Response(pngBuffer as any, {
         headers: {
             "Content-Type": "image/png",
         },

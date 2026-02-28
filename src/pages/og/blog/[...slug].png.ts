@@ -73,7 +73,7 @@ export const GET: APIRoute = async ({ props }) => {
                 display: "flex",
                 height: "100%",
                 width: "100%",
-                backgroundColor: "#fff0f3",
+                backgroundColor: "#fdf8fb",
                 backgroundImage: imageBase64 ? `url('${imageBase64}')` : undefined,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
@@ -91,7 +91,7 @@ export const GET: APIRoute = async ({ props }) => {
                             alignItems: "flex-end",
                             width: "100%",
                             padding: "40px",
-                            background: "linear-gradient(to top, rgba(88, 28, 51, 0.9) 0%, rgba(88, 28, 51, 0) 100%)",
+                            background: "linear-gradient(to top, rgba(56, 46, 53, 0.9) 0%, rgba(56, 46, 53, 0) 100%)",
                         },
                         children: [
                             {
@@ -123,7 +123,7 @@ export const GET: APIRoute = async ({ props }) => {
                                                 style: {
                                                     fontSize: "36px",
                                                     fontWeight: 400,
-                                                    color: "#fecdd3", // rose-200
+                                                    color: "#ebbde0", // rose-200
                                                     fontFamily: "Inter",
                                                 },
                                             },
