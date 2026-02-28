@@ -3,9 +3,9 @@ title: Perlen-Set „Ocean Blue“ – Handgehäkelte Schmuckelemente
 description: Tauche ein in die Welt der glitzernden Details. Diese aufwendig mit Glasperlen umhäkelten Perlen und Schläuche sind kleine Kunstwerke für sich. Ob als Statement-Kette oder als besonderes Accessoire – das tiefe Blau bringt jedes Outfit zum Leuchten.
 price: 150
 heroImage: ../../assets/uploads/blau.jpeg
-stripeLink: https://buy.stripe.com/test_8x25kCbsy7RVdzl2hl1wY01
+stripeLink: ''
 isUnique: true
-isSoldOut: false
+isSoldOut: true
 ---
 
 **Beschreibung:**
