@@ -1,10 +1,10 @@
 ---
 title: Startseite
+description: ''
 hero:
   title: Handgemacht & Einzigartig
-  subtitle: Entdecken Sie liebevoll gestaltete Unikate, inspirierende Projekte und
-    kreative Workshops.
-  image: ../../assets/uploads/cover-photo.jpg
+  subtitle: Entdecken Sie liebevoll gestaltete Unikate, inspirierende Projekte und kreative Workshops.
+  image: /assets/uploads/debby-hudson-1eV-OecIKgI-unsplash.jpg
   buttonText: Zum Shop
   buttonLink: /products
 features:
@@ -19,9 +19,7 @@ features:
     image: ../../assets/uploads/courses.jpg
 intro:
   title: Über Der Rosa Knopf
-  text: Wir sind eine kleine Manufaktur mit einer großen Leidenschaft für Details.
-    Jedes Stück in unserem Shop ist ein Unikat, gefertigt mit Sorgfalt und Liebe
-    aus Nürnberg.
+  text: Wir sind eine kleine Manufaktur mit einer großen Leidenschaft für Details. Jedes Stück in unserem Shop ist ein Unikat, gefertigt mit Sorgfalt und Liebe aus Nürnberg.
   image: ../../assets/uploads/sabine_profile_v2.png
   linkText: Mehr erfahren
   linkUrl: /about
