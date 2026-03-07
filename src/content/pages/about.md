@@ -14,6 +14,8 @@ In meiner Werkstatt entstehen neue Einzelstücke aus alten Sachen – Upcycling 
 
 ### Erfahrung & Leidenschaft
 
-Handwerkliches Können ist die Basis meiner Arbeit. Ich blicke auf über **34 Jahre praktische Erfahrung auf Meisterniveau** zurück. Es steckt in jedem meiner Stücke das Wissen, die Sorgfalt und der hohe Qualitätsanspruch, den ich über Jahrzehnte perfektioniert habe.
+Handwerkliches Können ist die Basis meiner Arbeit. Ich blicke auf über **34 Jahre praktische Erfahrung auf Meisterniveau** zurück.
 
-Mit **Der Rosa Knopf** lade ich Sie ein, diese Freude an Kreativität und Qualität zu teilen. Stöbern Sie durch meinen Shop oder lassen Sie sich inspirieren!
+ Es steckt in jedem meiner Stücke das Wissen, die Sorgfalt und der hohe Qualitätsanspruch, den ich über Jahrzehnte perfektioniert habe.
+
+Mit **Der Rosa Knopf** lade ich alle ein, diese Freude an Kreativität und Qualität zu teilen. Stöbert durch meinen Shop und lasst euch  inspirieren!
