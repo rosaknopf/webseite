@@ -1,10 +1,11 @@
 ---
 title: Nähkurs für Anfänger
 description: Lernen Sie die Grundlagen.
-date: 2024-03-15T14:00:00
-price: 190
+date: 2026-03-18T14:00:00
+price: 100
 duration: 3 Stunden
-location: Atelier Rosa Knopf
-heroImage: ../../assets/uploads/anthony-fomin-ohcbhruzoya-unsplash.jpg
+location: Im Stofflager
+heroImage: /assets/uploads/image.jpg
 ---
+
 Kommen Sie vorbei und lernen Sie nähen.
