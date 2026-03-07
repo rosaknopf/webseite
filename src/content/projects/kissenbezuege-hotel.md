@@ -9,7 +9,7 @@ description: |-
   Im Inneren sorgt ein hochwertiges Baumwollfutter mit Innentasche für eine angenehme und zusätzlichen Schutz für deine Lieblingsstücke.
 pubDate: 2026-02-05T09:30:00.000Z
 heroImage: ../../assets/uploads/project3.png
-status: In Progress
+status: Completed
 ---
 
-![Handgefertigte kleine rosa Kosmetik Tasche ](/assets/uploads/IMG_0715.jpeg)
+![Handgefertigte kleine rosa Kosmetik Tasche](/assets/uploads/IMG_0715.jpeg)
