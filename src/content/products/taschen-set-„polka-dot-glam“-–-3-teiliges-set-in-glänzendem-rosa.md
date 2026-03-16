@@ -1,8 +1,11 @@
 ---
 title: Taschen-Set „Polka Dot Glam“ – 3-teiliges Set in glänzendem Rosa
 description: Organisation war noch nie so schick! Dieses dreiteilige Set aus gestepptem, glänzendem Material mit goldenen Punkten bringt Ordnung in deinen Alltag. Vom großen Shopper bis zum kleinen Kosmetiktäschchen – hier findet alles seinen Platz.
-price: 300
+price: 155
 heroImage: ../../assets/uploads/taschen-rosa.jpeg
+gallery:
+  - image: /assets/uploads/IMG_0715.jpeg
+  - image: /assets/uploads/IMG_0722.jpeg
 stripeLink: ''
 isUnique: true
 isSoldOut: true
