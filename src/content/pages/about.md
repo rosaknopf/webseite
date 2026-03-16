@@ -2,7 +2,7 @@
 title: Über Mich
 description: ''
 mainHeading: Sabine & Der Rosa Knopf
-quote: '"Ich zaubere kreative Dinge aus alten Sachen."'
+quote: '"Ich zaubere kreative Dinge aus alten Sachen und noch viel mehr.'
 heroImage: /assets/uploads/image-2.jpg
 ---
 
