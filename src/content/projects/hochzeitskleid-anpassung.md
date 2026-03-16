@@ -6,7 +6,7 @@ heroImage: /assets/uploads/IMG_0671.jpeg
 status: In Progress
 ---
 
-**Handgefertigtes ** **Braut- KorsagenOberteil**![](/assets/uploads/IMG_0686.jpeg)
+\*\*Handgefertigtes \*\* **Braut- KorsagenOberteil**![](/assets/uploads/IMG_0686.jpeg)
 
  romantisches Unikat mit handgenähten Blüten
 
