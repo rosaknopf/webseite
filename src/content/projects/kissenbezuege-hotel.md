@@ -8,7 +8,7 @@ description: |-
 
   Im Inneren sorgt ein hochwertiges Baumwollfutter mit Innentasche für eine angenehme und zusätzlichen Schutz für deine Lieblingsstücke.
 pubDate: 2026-02-05T09:30:00.000Z
-heroImage: ../../assets/uploads/project3.png
+heroImage: /assets/uploads/IMG_0714.jpeg
 status: Completed
 ---
 
