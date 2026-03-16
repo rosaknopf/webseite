@@ -1,5 +1,5 @@
 ---
-title: 'Kollektion: Nachhaltige Kulturbeutel'
+title: Handgefertigtes Unikat    Jeans- Bauchtasche
 description: Entwicklung einer Kleinserie von Kulturbeuteln aus upgecycelten Stoffresten.
 pubDate: 2026-03-16T20:25:00
 heroImage: /assets/uploads/DF3E2822-5483-4E6B-A83E-F4D9D391FA05.jpeg
