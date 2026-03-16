@@ -13,14 +13,14 @@ features:
     image: /assets/uploads/IMG_3146.jpeg
   - title: Unsere Projekte
     link: /projects
-    image: ../../assets/uploads/projects.jpg
+    image: /assets/uploads/insta4.jpg
   - title: Kurse & Workshops
     link: /courses
     image: ../../assets/uploads/courses.jpg
 intro:
   title: Über Der Rosa Knopf
   text: Wir sind eine kleine Manufaktur mit einer großen Leidenschaft für Details. Jedes Stück in unserem Shop ist ein Unikat, gefertigt mit Sorgfalt und Liebe aus Nürnberg.
-  image: ../../assets/uploads/sabine_profile_v2.png
+  image: /assets/uploads/IMG_3415.jpeg
   linkText: Mehr erfahren
   linkUrl: /about
 instagram:
