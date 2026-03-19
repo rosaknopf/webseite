@@ -1,11 +1,11 @@
 ---
-title: Nähkurs Block 2 (Frühjahr 2026)
+title: 1.  Nähkurs           (Frühjahr 2026)
 description: 5-wöchiger Nähkurs für Einsteiger und Fortgeschrittene. Wähle zwischen 4 verschiedenen Vormittags- und Abendgruppen.
 date: 2026-05-06T14:00:00
 price: 100
-duration: 5 -6 Termine (je 3 Stunden)
+duration: 5  Termine    (je 3 Stunden)
 location: Wolfgang Borchertstr. 4, 90530 Wendelstein (im Stofflager)
-heroImage: /assets/uploads/image.jpg
+heroImage: /assets/uploads/Bildschirmfoto_19-3-2026_92653_.jpeg
 ---
 
 Wir begrüßen den Frühling an der Nähmaschine! In diesem 5-wöchigen Block zeige ich dir, wie du deine Nähprojekte erfolgreich umsetzt – egal ob du blutige Anfängerin bist oder schon erste Erfahrungen gesammelt hast. In gemütlicher Runde setzen wir eure Ideen in die Tat um.
@@ -16,25 +16,25 @@ Um möglichst vielen die Teilnahme zu ermöglichen, biete ich diesen Kurs in **v
 
 Möchtest du dich anmelden? Bitte überweise die Kursgebühr auf das angegebene Konto und gib im Verwendungszweck **unbedingt die jeweilige Kursnummer** an!
 
-**Option A (Mittwoch Nachmittag) – Kursnr. 129**
+** (Mittwoch Nachmittag) – Kursnummer**
 
 * **Zeit:** 14:00 - 17:00 Uhr
-* **Termine:** 18.03. / 25.03. / 15.04. / 22.04. / 29.04.
+* **Termine:** 
 
-**Option B (Mittwoch Abend) – Kursnr. 130**
+** (Mittwoch Abend) – Kursnummer**
 
 * **Zeit:** 17:30 - 20:30 Uhr
-* **Termine:** 18.03. / 25.03. / 15.04. / 22.04. / 29.04.
+* **Termine:**
 
-**Option C (Donnerstag Nachmittag) – Kursnr. 131**
+** (Donnerstag Nachmittag) – Kursnummer**
 
 * **Zeit:** 14:00 - 17:00 Uhr
-* **Termine:** 19.03. / 26.03. / 16.04. / 23.04. / 30.04.
+* **Termine:** 
 
-**Option D (Donnerstag Abend) – Kursnr. 132**
+** (Donnerstag Abend) – Kursnummer**
 
 * **Zeit:** 17:30 - 20:30 Uhr
-* **Termine:** 19.03. / 26.03. / 16.04. / 23.04. / 30.04.
+* **Termine:** 
 
 ### Anmeldung & Kontakt
 
