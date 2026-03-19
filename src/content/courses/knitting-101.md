@@ -1,11 +1,11 @@
 ---
-title: 2. Nähkurs  für Anfänger u. Vorgeschnittene
-description: Lernen Sie die Grundlagen.
-date: 2026-03-18T14:00:00
-price: 100
+title: 3.   Nähkurs  für Anfänger u. Vorgeschnittene
+description: Lernet alles was euch so Spaß macht und habt Freude an diesem Hobby.
+date: 2026-03-19T09:41:00
+price: 120
 duration: 3 Stunden
 location: Im Stofflager
-heroImage: /assets/uploads/image-1.jpg
+heroImage: /assets/uploads/Bildschirmfoto_19-3-2026_9282_.jpeg
 ---
 
-Kommen Sie vorbei und lernen Sie nähen.
+Seid kreativ mit mir.
